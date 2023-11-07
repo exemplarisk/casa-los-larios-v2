@@ -5,14 +5,25 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const BookingSection: React.FC = () => {
   const [startDate, setStartDate] = React.useState(new Date());
+
   return (
     <section className={styles.bookingSection}>
-      <h2>Book Your Stay</h2>
-      <ReactDatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
-      <p>Check availability and reserve your stay at Casa Los Larios.</p>
+      <div className={styles.bookingContent}>
+        <div className={styles.bookingInfo}>
+          <h2>Book Your Stay</h2>
+          <p>Discover the perfect getaway at Casa Los Larios.</p>
+        </div>
+        <div className={styles.bookingForm}>
+          <p>Select your dates:</p>
+          <ReactDatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            minDate={new Date()}
+            dateFormat="dd/MM/yyyy"
+          />
+          <button className={styles.bookButton}>Check Availability</button>
+        </div>
+      </div>
     </section>
   );
 };

@@ -6,6 +6,7 @@ import Hero from "../components/Hero/Hero";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Footer from "../components/Footer/Footer";
 import styles from "../styles/Home.module.css";
+import ApartmentDetails from '../components/ApartmentDetails/ApartmentDetails';
 
 const Home: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Home: React.FC = () => {
 
       <main className={styles.main}>
         <Hero />
+        <ApartmentDetails />
         <BookingSection />
         <ContactForm />
       </main>

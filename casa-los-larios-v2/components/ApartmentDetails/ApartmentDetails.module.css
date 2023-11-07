@@ -1,0 +1,54 @@
+/* ApartmentDetails.module.css */
+.apartmentDetails {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.detailsContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.detailsText {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.detailsText h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.detailsText p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.detailsText ul {
+    font-size: 18px;
+    color: #666;
+}
+
+.detailsText ul li {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.detailsImage {
+    flex: 1;
+    text-align: center;
+}
+
+.detailsImage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
