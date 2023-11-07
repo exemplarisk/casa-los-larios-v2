@@ -1,24 +1,22 @@
 {
-  "name": "casa-los-larios-v2",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.1"
+    "next": "latest",
+    "react": "18.2.0",
+    "react-datepicker": "^4.21.0",
+    "react-dom": "18.2.0"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.1"
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.36",
+    "typescript": "^5.2.2"
   }
 }

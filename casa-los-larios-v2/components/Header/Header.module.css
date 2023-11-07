@@ -1,0 +1,19 @@
+/* components/Header/Header.module.css */
+
+.header {
+    background: url('/path-to-your-header-image.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.title {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.subtitle {
+    color: #fff;
+    margin-top: 1rem;
+}
