@@ -1,5 +1,12 @@
 import React from "react";
 import styles from "./Footer.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer: React.FC = () => {
   return (
@@ -7,7 +14,7 @@ const Footer: React.FC = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerLogo}>
           <h2 className={styles.title}>Casa Los Larios</h2>
-          <p className={styles.subtitle}>Your Ideal Summer Getaway</p>{" "}
+          <p className={styles.subtitle}>Your Ideal Summer Getaway</p>
         </div>
         <div className={styles.contactInfo}>
           <h3>Contact Information</h3>
@@ -18,13 +25,13 @@ const Footer: React.FC = () => {
         <div className={styles.socialLinks}>
           <h3>Follow Us</h3>
           <a href="#" className={styles.socialIcon}>
-            <i className="fab fa-facebook"></i>
+            <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a href="#" className={styles.socialIcon}>
-            <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           <a href="#" className={styles.socialIcon}>
-            <i className="fab fa-instagram"></i>
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>
       </div>

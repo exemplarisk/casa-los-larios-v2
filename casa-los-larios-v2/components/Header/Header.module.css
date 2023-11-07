@@ -1,11 +1,12 @@
 .header {
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: #fafafa;
+    color: #333;
     padding: 20px 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -16,11 +17,14 @@
 .logo h1 {
     font-size: 36px;
     margin: 0;
+    color: #333;
+    /* Dark text color */
 }
 
 .logo p {
     font-size: 14px;
     margin: 5px 0;
+    color: #666;
 }
 
 .navigation ul {
@@ -35,7 +39,7 @@
 
 .navigation a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -43,7 +47,6 @@
 
 .navigation a:hover {
     color: #ffd700;
-    /* Change color on hover to gold/yellow */
 }
 
 .ctaButton {
@@ -59,6 +62,5 @@
 
 .ctaButton:hover {
     background-color: #1a1a1a;
-    /* Change background color on hover to match the header */
     color: #ffd700;
 }
