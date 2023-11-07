@@ -3,7 +3,7 @@ import styles from "./ContactForm.module.css";
 
 const ContactForm: React.FC = () => {
   return (
-    <section className={styles.contactSection}>
+    <section id="contactSection" className={styles.contactSection}>
       <form
         className={styles.contactForm}
         action="mailto:info@casaloslarios.com"

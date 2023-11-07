@@ -1,61 +1,81 @@
+/* BookingSection.module.css */
 .bookingSection {
-    background-color: #f7f7f7;
-    padding: 80px 0;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 40px auto;
 }
 
 .bookingContent {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .bookingInfo {
-    flex: 1;
-    text-align: center;
-    padding: 0 20px;
+    width: 50%;
+    padding: 0 15px;
 }
 
 .bookingInfo h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 1.75rem;
     color: #333;
+    margin-bottom: 15px;
 }
 
 .bookingInfo p {
-    font-size: 18px;
+    font-size: 1rem;
     color: #666;
 }
 
 .bookingForm {
-    flex: 1;
-    text-align: center;
-    padding: 0 20px;
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-.bookingForm p {
-    font-size: 18px;
+.datePicker {
     margin-bottom: 10px;
-    color: #333;
+}
+
+.datePicker p {
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 .react-datepicker-wrapper {
-    display: block;
+    margin-bottom: 10px;
 }
 
 .bookButton {
-    background-color: #007bff;
+    align-self: center;
+    background-color: #008f68;
     color: #fff;
-    padding: 12px 20px;
-    font-size: 18px;
+    padding: 12px 24px;
+    font-size: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .bookButton:hover {
-    background-color: #0056b3;
+    background-color: #006c54;
+}
+
+@media (max-width: 768px) {
+    .bookingContent {
+        flex-direction: column;
+    }
+
+    .bookingInfo,
+    .bookingForm {
+        width: 100%;
+    }
 }
