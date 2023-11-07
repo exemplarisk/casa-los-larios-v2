@@ -2,6 +2,7 @@ import React from 'react';
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import BookingSection from "../components/BookingSection/BookingSection";
+import Hero from "../components/Hero/Hero";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Footer from "../components/Footer/Footer";
 import styles from "../styles/Home.module.css";
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
       <Header />
 
       <main className={styles.main}>
+        <Hero />
         <BookingSection />
         <ContactForm />
       </main>

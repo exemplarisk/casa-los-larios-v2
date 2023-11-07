@@ -1,19 +1,64 @@
-/* components/Header/Header.module.css */
-
 .header {
-    background: url('/path-to-your-header-image.jpg') no-repeat center center;
-    background-size: cover;
-    text-align: center;
-    padding: 4rem 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.title {
-    color: #fff;
-    font-size: 2rem;
+.logo {
+    text-align: left;
+    flex: 1;
+}
+
+.logo h1 {
+    font-size: 36px;
     margin: 0;
 }
 
-.subtitle {
+.logo p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
     color: #fff;
-    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ffd700;
+    /* Change color on hover to gold/yellow */
+}
+
+.ctaButton {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #1a1a1a;
+    /* Change background color on hover to match the header */
+    color: #ffd700;
 }
