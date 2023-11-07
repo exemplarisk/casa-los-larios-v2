@@ -1,13 +1,13 @@
-/* ApartmentDetails.module.css */
 .apartmentDetails {
     background-color: #fff;
     padding: 80px 0;
+    text-align: center;
 }
 
 .detailsContent {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -17,12 +17,14 @@
     flex: 1;
     text-align: left;
     padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .detailsText h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #333;
+    font-weight: bold;
 }
 
 .detailsText p {
@@ -39,16 +41,99 @@
 .detailsText ul li {
     list-style: disc;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .detailsImage {
     flex: 1;
     text-align: center;
+    margin-top: 20px;
 }
 
-.detailsImage img {
-    max-width: 100%;
+.imageSlider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.sliderImage,
+.active {
+    width: 100%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.prevButton,
+.nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.prevButton {
+    left: 0;
+}
+
+.nextButton {
+    right: 0;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+    background-color: #333;
+}
+
+.reservationButton {
+    background-color: #008f68;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.reservationButton:hover {
+    background-color: #007156;
+}
+
+@media (min-width: 992px) {
+    .detailsContent {
+        padding: 80px 20px;
+    }
+
+    .detailsText h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .detailsContent {
+        flex-direction: column;
+    }
+
+    .detailsText,
+    .detailsImage {
+        flex: none;
+        width: 100%;
+    }
+
+    .imageSlider {
+        max-width: 100%;
+    }
 }

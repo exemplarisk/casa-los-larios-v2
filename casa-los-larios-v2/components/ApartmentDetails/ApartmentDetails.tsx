@@ -1,8 +1,26 @@
-// components/ApartmentDetails/ApartmentDetails.tsx
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ApartmentDetails.module.css";
 
-const ApartmentDetails: React.FC = () => {
+const ApartmentDetails = () => {
+  const images = [
+    "/summergetaway.jpg",
+    "/summergetaway1.jpg",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <section className={styles.apartmentDetails}>
       <div className={styles.detailsContent}>
@@ -20,10 +38,32 @@ const ApartmentDetails: React.FC = () => {
             <li>Fully equipped kitchen for your convenience</li>
             <li>Modern amenities including Wi-Fi and TV</li>
             <li>A private pool for residents</li>
+            <li>Easy access to local attractions and dining</li>
+            <li>Complimentary welcome basket upon arrival</li>
           </ul>
+          <button className={styles.reservationButton}>Book Now</button>
         </div>
         <div className={styles.detailsImage}>
-          <img src="/summergetaway.jpg" alt="Casa Los Larios Apartment" />
+          <div className={styles.imageSlider}>
+            <button className={styles.prevButton} onClick={prevImage}>
+              &#10094;
+            </button>
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Casa Los Larios Apartment View ${index + 1}`}
+                className={
+                  index === currentImageIndex
+                    ? styles.active
+                    : styles.sliderImage
+                }
+              />
+            ))}
+            <button className={styles.nextButton} onClick={nextImage}>
+              &#10095;
+            </button>
+          </div>
         </div>
       </div>
     </section>
