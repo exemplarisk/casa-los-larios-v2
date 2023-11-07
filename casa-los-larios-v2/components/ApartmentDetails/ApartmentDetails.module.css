@@ -1,65 +1,72 @@
 .apartmentDetails {
     background-color: #fff;
-    padding: 80px 0;
-    text-align: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .detailsContent {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 960px;
+    gap: 30px;
+    width: 100%;
 }
 
 .detailsText {
     flex: 1;
     text-align: left;
-    padding: 0 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #f9f9f9;
+    margin: 10px;
+    max-width: 440px;
 }
 
 .detailsText h2 {
-    font-size: 36px;
+    font-size: 1.75rem;
     margin-bottom: 20px;
     color: #333;
     font-weight: bold;
 }
 
-.detailsText p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.detailsText p,
+.detailsText ul li {
+    font-size: 0.95rem;
     color: #666;
+    line-height: 1.6;
 }
 
 .detailsText ul {
-    font-size: 18px;
-    color: #666;
+    padding-left: 20px;
 }
 
 .detailsText ul li {
     list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .detailsImage {
     flex: 1;
-    text-align: center;
-    margin-top: 20px;
+    max-width: 440px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .imageSlider {
     position: relative;
-    max-width: 600px;
-    margin: auto;
+    width: 100%;
 }
 
 .sliderImage,
 .active {
     width: 100%;
-    height: auto;
     display: none;
 }
 
@@ -80,14 +87,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
 }
 
 .prevButton {
-    left: 0;
+    left: 10px;
 }
 
 .nextButton {
-    right: 0;
+    right: 10px;
 }
 
 .prevButton:hover,
@@ -98,42 +109,45 @@
 .reservationButton {
     background-color: #008f68;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1rem;
     margin-top: 20px;
     transition: background-color 0.3s ease;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-decoration: none;
 }
 
 .reservationButton:hover {
-    background-color: #007156;
+    background-color: #006c54;
 }
 
-@media (min-width: 992px) {
-    .detailsContent {
-        padding: 80px 20px;
-    }
-
-    .detailsText h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .detailsContent {
         flex-direction: column;
+        align-items: center;
     }
 
     .detailsText,
     .detailsImage {
-        flex: none;
-        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
     }
 
     .imageSlider {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .apartmentDetails {
+        padding: 40px 10px;
+    }
+
+    .detailsContent {
+        gap: 20px;
     }
 }

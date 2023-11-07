@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import styles from "./ApartmentDetails.module.css";
 
 const ApartmentDetails = () => {
-  const images = [
-    "/summergetaway.jpg",
-    "/summergetaway1.jpg",
-  ];
+  const images = ["/summergetaway.jpg", "/summergetaway1.jpg"];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -27,21 +24,24 @@ const ApartmentDetails = () => {
         <div className={styles.detailsText}>
           <h2>About Casa Los Larios</h2>
           <p>
-            Welcome to Casa Los Larios, your luxurious summer retreat in
-            Torrevieja, Spain. Our spacious apartment offers everything you need
-            for a relaxing and memorable vacation.
+            Located in Torrevieja, Spain, Casa Los Larios
+            offers an exquisite getaway with breathtaking sea views. Experience
+            the comfort and elegance of our well-appointed apartment.
           </p>
-          <p>This beautiful apartment features:</p>
           <ul>
-            <li>Stunning sea views from the balcony</li>
-            <li>Two comfortable bedrooms with ample space</li>
-            <li>Fully equipped kitchen for your convenience</li>
-            <li>Modern amenities including Wi-Fi and TV</li>
-            <li>A private pool for residents</li>
-            <li>Easy access to local attractions and dining</li>
-            <li>Complimentary welcome basket upon arrival</li>
+            <li>Stunning vistas from a sun-kissed balcony</li>
+            <li>Two pristine bedrooms designed for relaxation</li>
+            <li>A culinary-ready kitchen with state-of-the-art appliances</li>
+            <li>
+              High-speed Wi-Fi and a large-screen TV for your entertainment
+            </li>
+            <li>An exclusive pool for serene aquatic retreats</li>
+            <li>Proximity to gourmet restaurants and local attractions</li>
+            <li>A warm, personalized welcome basket on arrival</li>
           </ul>
-          <button className={styles.reservationButton}>Book Now</button>
+          <button className={styles.reservationButton}>
+            Reserve Your Stay
+          </button>
         </div>
         <div className={styles.detailsImage}>
           <div className={styles.imageSlider}>
@@ -52,7 +52,7 @@ const ApartmentDetails = () => {
               <img
                 key={index}
                 src={image}
-                alt={`Casa Los Larios Apartment View ${index + 1}`}
+                alt={`Casa Los Larios View ${index + 1}`}
                 className={
                   index === currentImageIndex
                     ? styles.active
