@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <section className={styles.footerLogo}>
-          <h2 className={styles.title}>Casa Los Larios</h2>
-          <p className={styles.subtitle}>Your Ideal Summer Getaway</p>
+          <h2 className={styles.brandTitle}>Casa Los Larios</h2>
+          <p className={styles.tagline}>Your Ideal Summer Getaway</p>
         </section>
         <address className={styles.contactInfo}>
-          <h3>Contact Information</h3>
+          <h3>Contact Us</h3>
           <p>Location: Torrevieja, Spain</p>
           <p>
             Email:{" "}
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           </p>
         </address>
         <nav className={styles.socialLinks}>
-          <h3>Follow Us</h3>
+          <h3>Connect</h3>
           <a
             href="https://www.facebook.com"
             target="_blank"
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </nav>
-        <nav className={styles.sitemap}>
+        <nav className={styles.legalLinks}>
           <a href="/terms-of-service" className={styles.link}>
             Terms of Service
           </a>
