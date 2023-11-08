@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       <div className={styles.heroContent}>
         <h2>Welcome to Casa Los Larios</h2>
         <p>Your ideal summer retreat in Torrevieja, Spain.</p>
-        <a href="#calendar" className={styles.ctaButton}>
+        <a href="#booking" className={styles.ctaButton}>
           Check Availability
         </a>
       </div>

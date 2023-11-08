@@ -1,6 +1,7 @@
 // components/Header/Header.tsx
 import React from "react";
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
@@ -12,13 +13,16 @@ const Header: React.FC = () => {
       <nav className={styles.navigation}>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="#calendar">Calendar</a>
+            <Link href="/gallery">Gallery</Link>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <Link href="/booking">Booking</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </nav>

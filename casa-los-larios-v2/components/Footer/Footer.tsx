@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
+  faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -24,13 +24,17 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.socialLinks}>
           <h3>Follow Us</h3>
-          <a href="#" className={styles.socialIcon}>
+          <a href="#" target="_blank" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a href="#" className={styles.socialIcon}>
-            <FontAwesomeIcon icon={faTwitter} />
+          <a
+            href="https://www.linkedin.com/in/jonatan-schultz/"
+            target="_blank"
+            className={styles.socialIcon}
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="#" className={styles.socialIcon}>
+          <a href="#" target="_blank" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>
