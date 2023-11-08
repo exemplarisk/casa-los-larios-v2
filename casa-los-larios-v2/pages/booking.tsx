@@ -14,10 +14,7 @@ function booking() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div>
-        <BookingSection />
-      </div>
+      <BookingSection />
     </Layout>
   );
 }

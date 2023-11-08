@@ -15,7 +15,6 @@ const Home: React.FC = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Hero />
       <ApartmentDetails />
     </Layout>

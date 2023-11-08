@@ -11,10 +11,7 @@ function gallery() {
         <meta name="description" content="Gallery of Casa-Los-Larios" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div>
-        <Gallery />
-      </div>
+      <Gallery />
     </Layout>
   );
 }

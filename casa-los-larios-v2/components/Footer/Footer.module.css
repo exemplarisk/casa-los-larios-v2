@@ -1,50 +1,37 @@
 .footer {
-    background-color: #fff;
     color: #333;
     padding: 40px 0;
     text-align: center;
-    border-top: 2px solid #ccc;
-    box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.1);
-    margin-top: 10vh;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
 }
 
 .footerContent {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .footerLogo,
 .contactInfo,
 .socialLinks {
-    flex: 1;
-    padding: 0 20px;
+    padding: 0 10px;
+    margin-bottom: 20px;
 }
 
-.title {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #666;
-}
-
+.title,
+.subtitle,
 .contactInfo h3,
 .socialLinks h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
     color: #333;
-}
-
-.text {
-    font-size: 16px;
-    margin: 5px 0;
-    color: #666;
+    font-weight: normal;
 }
 
 .socialIcon {
@@ -62,5 +49,43 @@
 }
 
 .socialIcon:hover {
-    color: #ffd700;
+    color: #0070f3;
+}
+
+.sitemap {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.link {
+    color: #333;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .socialIcon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footerContent {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footerLogo,
+    .contactInfo,
+    .socialLinks {
+        flex: none;
+        max-width: none;
+    }
 }
