@@ -1,9 +1,9 @@
 .footer {
     color: #333;
     padding: 40px 0;
+    
     text-align: center;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05);
-    padding: 20px 0;
     background-color: #f7f7f7;
     border-bottom: 1px solid #eaeaea;
     border-top: 1px solid #eaeaea;
@@ -26,10 +26,38 @@
     margin-bottom: 20px;
 }
 
+
 .contactInfo h3,
 .socialLinks h3 {
     color: #333;
-    font-weight: normal;
+    
+    font-weight: 600;
+    
+    font-size: 1.25rem;
+    
+    margin-bottom: 0.5rem;
+    
+}
+
+.brandTitle {
+    font-size: 2em;
+    
+    font-weight: 700;
+    
+    color: #333;
+    
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 1rem;
+    
+}
+
+.legalLinks {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 .socialIcon {
@@ -37,7 +65,8 @@
     font-size: 24px;
     margin: 0 10px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    
     display: inline-block;
 }
 
@@ -48,26 +77,10 @@
 
 .socialIcon:hover {
     color: #0070f3;
-}
-
-.brandTitle {
-    font-size: 1.5em;
-        font-weight: bold;
-    }
-
-.tagline {
-    font-style: italic;
-    }
-
-.legalLinks {
-    display: flex;
-    justify-content: center;
-        padding: 10px 0;
-}
-
-.socialIcon:hover {
+    
     transform: scale(1.1);
-    }
+    
+}
 
 .link {
     color: #333;
@@ -80,12 +93,6 @@
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .socialIcon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
 
 @media (max-width: 768px) {
     .footerContent {
@@ -96,7 +103,15 @@
     .footerLogo,
     .contactInfo,
     .socialLinks {
-        flex: none;
-        max-width: none;
+        flex-basis: 100%;
+        
+        max-width: 100%;
+        
+    }
+
+    .socialIcon svg {
+        width: 24px;
+        
+        height: 24px;
     }
 }
