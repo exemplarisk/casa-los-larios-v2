@@ -1,4 +1,3 @@
-// /pages/index.tsx
 import React from "react";
 import Head from "next/head";
 import Layout from "../components/Layout/Layout";
@@ -12,7 +11,7 @@ const Home: React.FC = () => {
         <title>Casa Los Larios</title>
         <meta
           name="description"
-          content="Rent a beautiful summer apartment in Torrevieja, Spain"
+          content="Welcome to Casa-Los-Larios"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
