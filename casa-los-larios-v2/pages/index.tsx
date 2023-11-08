@@ -1,14 +1,13 @@
-import React from 'react';
+// /pages/index.tsx
+import React from "react";
 import Head from "next/head";
-import Header from "../components/Header/Header";
+import Layout from "../components/Layout/Layout";
 import Hero from "../components/Hero/Hero";
-import Footer from "../components/Footer/Footer";
-import styles from "../styles/Home.module.css";
-import ApartmentDetails from '../components/ApartmentDetails/ApartmentDetails';
+import ApartmentDetails from "../components/ApartmentDetails/ApartmentDetails";
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>Casa Los Larios</title>
         <meta
@@ -18,15 +17,9 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
-      <main className={styles.main}>
-        <Hero />
-        <ApartmentDetails />
-      </main>
-
-      <Footer />
-    </div>
+      <Hero />
+      <ApartmentDetails />
+    </Layout>
   );
 };
 
