@@ -12,6 +12,7 @@
 .logo {
     text-align: left;
     flex: 1;
+    margin-left: 1vw;
 }
 
 .logo h1 {
