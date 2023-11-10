@@ -18,36 +18,44 @@ const BookingSection: React.FC = () => {
     new Date("2023-11-30"),
   ];
 
-const checkAvailability = () => {
-  // Check if selected dates overlap with booked dates
-  let isUnavailable = bookedDates.some(
-    (bookedDate) => startDate <= bookedDate && bookedDate <= endDate
-  );
+  const getTotalNights = (start, end) => {
+    const diffInTime = end.getTime() - start.getTime();
+    return diffInTime / (1000 * 3600 * 24); // Difference in days
+  };
 
-  if (isUnavailable) {
-    Swal.fire({
-      title: "Unavailable Dates Selected",
-      text: "Unfortunately, one or more of the chosen dates are not available. Please try different dates.",
-      icon: "error",
-      confirmButtonText: "OK",
-      confirmButtonColor: "#008f68",
-    });
-  } else {
-    Swal.fire({
-      title: "Dates Available!",
-      text: "The chosen dates are available. Please contact us below for booking.",
-      icon: "success",
-      confirmButtonText: "SURE THING",
-      confirmButtonColor: "#008f68",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        document
-          .getElementById("contactSection")
-          ?.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-};
+  const highlightedDates = {
+    "highlighted-dates": bookedDates,
+  };
+
+  const checkAvailability = () => {
+    let isUnavailable = bookedDates.some(
+      (bookedDate) => startDate <= bookedDate && bookedDate <= endDate
+    );
+
+    if (isUnavailable) {
+      Swal.fire({
+        title: "Unavailable Dates Selected",
+        text: "Unfortunately, one or more of the chosen dates are not available. Please try different dates.",
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#008f68",
+      });
+    } else {
+      Swal.fire({
+        title: "Dates Available!",
+        text: "The chosen dates are available. Please contact us below for booking.",
+        icon: "success",
+        confirmButtonText: "SURE THING",
+        confirmButtonColor: "#008f68",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document
+            .getElementById("contactSection")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    }
+  };
   return (
     <section className={styles.bookingSection}>
       <div className={styles.bookingContent}>
@@ -70,6 +78,7 @@ const checkAvailability = () => {
               excludeDates={bookedDates}
               minDate={new Date()}
               dateFormat="dd/MM/yyyy"
+              highlightDates={highlightedDates}
             />
           </div>
           <div className={styles.datePicker}>
@@ -83,8 +92,17 @@ const checkAvailability = () => {
               excludeDates={bookedDates}
               minDate={startDate}
               dateFormat="dd/MM/yyyy"
+              highlightDates={highlightedDates}
             />
           </div>
+          {startDate && endDate && (
+            <div className={styles.bookingSummary}>
+              <h3>Your Stay:</h3>
+              <p>Check-in: {startDate.toLocaleDateString()}</p>
+              <p>Check-out: {endDate.toLocaleDateString()}</p>
+              <p>Total Nights: {getTotalNights(startDate, endDate)}</p>
+            </div>
+          )}
           <button onClick={checkAvailability} className={styles.bookButton}>
             Check Availability
           </button>
