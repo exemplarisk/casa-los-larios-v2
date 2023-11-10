@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
           </a>
         </nav>
         <nav className={styles.legalLinks}>
-          <a href="/terms-of-service" className={styles.link}>
+          <a href="/terms" className={styles.link}>
             Terms of Service
           </a>
           <a href="/privacy-policy" className={styles.link}>
