@@ -13,13 +13,13 @@ const BookingSection: React.FC = () => {
       title: "Dates Available!",
       text: "The chosen dates are available. Please contact us below for booking.",
       icon: "success",
-      confirmButtonText: "Contact Us",
+      confirmButtonText: "SURE THING",
       confirmButtonColor: "#008f68",
     }).then((result) => {
       if (result.isConfirmed) {
         document
           .getElementById("contactSection")
-          .scrollIntoView({ behavior: "smooth" });
+          ?.scrollIntoView({ behavior: "smooth" });
       }
     });
   };
