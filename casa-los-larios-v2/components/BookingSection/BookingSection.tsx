@@ -8,7 +8,31 @@ const BookingSection: React.FC = () => {
   const [startDate, setStartDate] = React.useState(new Date());
   const [endDate, setEndDate] = React.useState(new Date());
 
-  const checkAvailability = () => {
+  const bookedDates = [
+    new Date("2023-12-25"),
+    new Date("2023-12-26"),
+    new Date("2023-12-27"),
+    new Date("2023-11-19"),
+    new Date("2023-11-20"),
+    new Date("2023-11-29"),
+    new Date("2023-11-30"),
+  ];
+
+const checkAvailability = () => {
+  // Check if selected dates overlap with booked dates
+  let isUnavailable = bookedDates.some(
+    (bookedDate) => startDate <= bookedDate && bookedDate <= endDate
+  );
+
+  if (isUnavailable) {
+    Swal.fire({
+      title: "Unavailable Dates Selected",
+      text: "Unfortunately, one or more of the chosen dates are not available. Please try different dates.",
+      icon: "error",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#008f68",
+    });
+  } else {
     Swal.fire({
       title: "Dates Available!",
       text: "The chosen dates are available. Please contact us below for booking.",
@@ -22,8 +46,8 @@ const BookingSection: React.FC = () => {
           ?.scrollIntoView({ behavior: "smooth" });
       }
     });
-  };
-
+  }
+};
   return (
     <section className={styles.bookingSection}>
       <div className={styles.bookingContent}>
@@ -43,6 +67,7 @@ const BookingSection: React.FC = () => {
               selectsStart
               startDate={startDate}
               endDate={endDate}
+              excludeDates={bookedDates}
               minDate={new Date()}
               dateFormat="dd/MM/yyyy"
             />
@@ -55,6 +80,7 @@ const BookingSection: React.FC = () => {
               selectsEnd
               startDate={startDate}
               endDate={endDate}
+              excludeDates={bookedDates}
               minDate={startDate}
               dateFormat="dd/MM/yyyy"
             />
