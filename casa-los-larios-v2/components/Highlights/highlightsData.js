@@ -1,9 +1,15 @@
 const highlightsData = [
   {
-    image: "/summergetaway.jpg",
+    image: "/comfort1.jpg",
     title: "Luxurious Comfort",
     description:
       "Experience the ultimate in comfort with our fully equipped, modern apartment.",
+  },
+  {
+    image: "/aparoutd.jpg",
+    title: "Pools",
+    description:
+      "Take a dip in our exclusive, crystal-clear pools for a refreshing aquatic retreat any time of the day.",
   },
   {
     image: "/beachfront.jpg",
@@ -12,46 +18,40 @@ const highlightsData = [
       "Step out onto the sun-drenched shores from our beachfront properties for the perfect tan or a serene evening walk.",
   },
   {
-    image: "/local-cuisine.jpg",
+    image: "/gastronomic2.jpg",
     title: "Gastronomic Delights",
     description:
-      "Savor the taste of local Spanish cuisine at nearby gourmet restaurants or through our in-house dining options.",
+      "Savor the taste of local Spanish cuisine at nearby gourmet restaurants.",
   },
   {
-    image: "/aparoutd.jpg",
-    title: "Serene Pools",
+    image: "/meatmarket.jpg",
+    title: "Nearby Market",
     description:
-      "Take a dip in our exclusive, crystal-clear pools for a refreshing aquatic retreat any time of the day.",
+      "Explore the market around the corner of Casa Los Larios. Every Sunday from 09-15. Here you will find everything from fresh fruits & vegetables, to toys and clothing.",
   },
   {
-    image: "/historic-tour.jpg",
-    title: "Cultural Tours",
-    description:
-      "Explore the rich history and vibrant culture of Torrevieja with guided tours leaving daily from Casa Los Larios.",
-  },
-  {
-    image: "/sunset-balcony.jpg",
+    image: "/seaview1.jpg",
     title: "Sunset Views",
     description:
-      "Enjoy breathtaking sunset views from your private balcony, overlooking the picturesque landscapes of Spain.",
+      "Enjoy breathtaking sunset views from our private terrassa, overlooking the landscapes of Orihuela Costa.",
   },
   {
-    image: "/fitness-center.jpg",
-    title: "State-of-the-Art Fitness",
+    image: "/beachwalk1.jpg",
+    title: "Beautiful Surroundings",
     description:
-      "Maintain your fitness routine with access to our fully equipped gym and wellness centers.",
+      "Step out into a paradise where golden sands meet crystal-clear waters, all just moments away from your doorstep. Explore the beautiful walks along the beach at sunrise or sunset, and connect with the natural beauty that makes Casa Los Larios a truly unique destination.",
   },
   {
-    image: "/luxury-spa.jpg",
-    title: "Relaxing Spa Services",
+    image: "/attraction1.jpg",
+    title: "Nearby Adventure",
     description:
-      "Indulge in ultimate relaxation with our on-site spa services, featuring massages, facials, and wellness treatments.",
+      "Nearby cities brim with touristic attractions, offering a blend of historic architecture, local markets, and vibrant nightlife. Dive into the rich tapestry of experiences with activities ranging from serene boat tours to lively street festivals, all within a short drive from Casa Los Larios.",
   },
   {
-    image: "/adventure-sports.jpg",
-    title: "Adventure Awaits",
+    image: "/airport.jpg",
+    title: "Convenient Airport Access",
     description:
-      "For the thrill-seekers, adventure sports and activities are available within the vicinity—everything from jet skiing to paragliding.",
+      "Ease into your vacation with convenient access to the airport. Alicante Airport is the closest airport, located just an hour drive away.",
   },
 ];
 
