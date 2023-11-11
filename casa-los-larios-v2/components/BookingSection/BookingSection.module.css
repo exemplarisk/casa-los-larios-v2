@@ -1,112 +1,91 @@
-.bookingSection {
-    background-color: #fff;
-    padding: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 10em auto;
-}
-
-.bookingContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.bookingInfo {
-    width: 50%;
-    padding: 0 5%;
-}
-
-.bookingInfo h2 {
-    font-size: 1.5rem;
-    
-    margin-bottom: 20px;
-    
-    color: #333;
-}
-
-.bookingInfo p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
-}
-
-.bookingForm {
-    width: 50%;
-    padding: 0 5%;
+.container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 10em 25px;
 }
 
-.datePicker {
-    margin-bottom: 15px;
-}
-
-.datePicker p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-.react-datepicker-wrapper {
-    margin-bottom: 10px;
-}
-
-.bookButton {
-    align-self: center;
-    background-color: #008f68;
-    color: #fff;
-    padding: 15px 24px;
-    font-size: 1.1rem;
-    border: none;
+.datePickerContainer {
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.summaryContainer {
     width: 100%;
-}
-
-.bookButton:hover {
-    background-color: #006c54;
-}
-
-.bookingSummary {
-    background-color: #f7f7f7;
-    
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 15px;
+    max-width: 30em;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.bookingSummary h3 {
-    margin-top: 0;
+.summaryHeader {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.summaryHeader p {
+    font-size: 16px;
     color: #333;
+    margin: 0;
 }
 
-.bookingSummary p {
+.summaryHeader span {
+    font-weight: bold;
+}
+
+.dateSelection p {
+    font-size: 14px;
     color: #666;
-    margin: 5px 0;
+    margin: 0;
 }
 
+.dateSelection span {
+    font-weight: bold;
+}
+
+.reserveButton {
+    display: block;
+    width: 100%;
+    background-color: #FF5A5F;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.reserveButton:hover {
+    background-color: #f14344;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .bookingContent {
+    .container {
         flex-direction: column;
     }
 
-    .bookingInfo,
-    .bookingForm {
+    .summaryContainer {
         width: 100%;
     }
+}
 
-    .bookingInfo h2 {
-        font-size: 1.25rem;
-        
+@media (max-width: 480px) {
+    .summaryContainer {
+        padding: 12px;
     }
 
-    .bookingForm {
-        order: -1;
-        
+    .reserveButton {
+        padding: 10px 20px;
     }
 }
