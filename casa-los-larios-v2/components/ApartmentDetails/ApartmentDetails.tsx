@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import styles from "./ApartmentDetails.module.css";
 
 const ApartmentDetails = () => {
-  const images = ["/summergetaway.jpg", "/summergetaway1.jpg"];
+  const images = [
+    "/familia1.jpg",
+    "/summergetaway.jpg",
+    "/summergetaway1.jpg",
+    "/seaview1.jpg",
+  ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -37,7 +42,6 @@ const ApartmentDetails = () => {
             </li>
             <li>An exclusive pool for serene aquatic retreats</li>
             <li>Proximity to gourmet restaurants and local attractions</li>
-            <li>A warm, personalized welcome basket on arrival</li>
           </ul>
           <button className={styles.reservationButton}>
             Reserve Your Stay

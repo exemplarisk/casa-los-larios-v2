@@ -3,8 +3,10 @@ import styles from "./Gallery.module.css";
 
 const Gallery: React.FC = () => {
   const images = [
+    "/familia1.jpg",
     "/summergetaway.jpg",
     "/summergetaway1.jpg",
+    "/seaview1.jpg",
   ];
 
   return (
