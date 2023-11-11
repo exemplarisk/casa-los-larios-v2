@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./BookingSection.module.css";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 const BookingSection: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const pricePerNight = 150;
 
   const bookedDates = [
@@ -21,13 +25,7 @@ const BookingSection: React.FC = () => {
     new Date("2024-01-10"),
     new Date("2024-01-11"),
     new Date("2024-01-12"),
-  ];
-
-  const isDateBlocked = (date: Date) => {
-    return bookedDates.some(
-      (bookedDate) => date.getTime() === bookedDate.getTime()
-    );
-  };
+  ];;
 
   const calculateTotalNights = () => {
     if (!startDate || !endDate) return 0;
@@ -38,31 +36,59 @@ const BookingSection: React.FC = () => {
     return calculateTotalNights() * pricePerNight;
   };
 
+  const openModal = () => {
+    if (!startDate || !endDate) {
+      alert("Please select both check-in and check-out dates.");
+      return;
+    }
+    setModalIsOpen(true);
+  };
+
+  const afterOpenModal = () => {
+    // Perform actions after modal opens if necessary
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const initiatePayment = () => {
+    // Simulate payment initiation logic
+    console.log("Payment initiated");
+    closeModal();
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.datePickerContainer}>
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-          startDate={startDate}
-          endDate={endDate}
-          selectsStart
-          minDate={new Date()}
-          excludeDates={bookedDates}
-          inline
-          monthsShown={1}
-        />
-        <DatePicker
-          selected={endDate}
-          onChange={(date) => setEndDate(date)}
-          selectsEnd
-          startDate={startDate}
-          endDate={endDate}
-          minDate={startDate}
-          excludeDates={bookedDates}
-          inline
-          monthsShown={1}
-        />
+      <div className={styles.datePickers}>
+        <div className={styles.datePickerContainer}>
+          <h3 className={styles.datePickerTitle}>Check-in</h3>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            startDate={startDate}
+            endDate={endDate}
+            selectsStart
+            minDate={new Date()}
+            excludeDates={bookedDates}
+            inline
+            monthsShown={1}
+          />
+        </div>
+        <div className={styles.datePickerContainer}>
+          <h3 className={styles.datePickerTitle}>Check-out</h3>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+            excludeDates={bookedDates}
+            inline
+            monthsShown={1}
+          />
+        </div>
       </div>
       <div className={styles.summaryContainer}>
         <div className={styles.summaryHeader}>
@@ -71,7 +97,7 @@ const BookingSection: React.FC = () => {
           </p>
           <p>
             <strong>Total Cost:</strong>{" "}
-            <span>SEK {calculateTotalCost().toFixed(2)}</span>
+            <span>{calculateTotalCost().toFixed(2)} €</span>
           </p>
         </div>
         <div className={styles.dateSelection}>
@@ -88,7 +114,22 @@ const BookingSection: React.FC = () => {
             </span>
           </p>
         </div>
-        <button className={styles.reserveButton}>Reserve</button>
+        <button onClick={openModal} className={styles.reserveButton}>
+          Reserve
+        </button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          contentLabel="Booking Details Form"
+          className={styles.modal}
+          overlayClassName={styles.overlay}
+        >
+          <h2>Booking Details</h2>
+          <button onClick={closeModal}>close</button>
+          {/* Form fields for booking details */}
+          <button onClick={initiatePayment}>Confirm Reservation</button>
+        </Modal>
       </div>
     </div>
   );
