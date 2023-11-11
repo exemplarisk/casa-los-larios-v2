@@ -3,7 +3,6 @@ import {
   FaPlane,
   FaBed,
   FaMapSigns,
-  FaParking,
   FaPaw,
   FaCocktail,
 } from "react-icons/fa";
@@ -68,19 +67,21 @@ const apartmentInfo: ApartmentInfoItem[] = [
     title: "ACCOMMODATION",
     description: (
       <>
-        2 Bedrooms
+        <b>2 Bedrooms</b>
         <br />
-        1 Queen Size
+        <b>1 Queen Size</b>
         <br />
-        4 Single Beds
+        <b>4 Single Beds</b>
         <br />
-        2 Bathrooms
+        <b>2 Bathrooms</b>
         <br />
-        Large Terrace
+        <b>Large Terrace</b>
         <br />
-        Smart TV
+        <b>Smart TV</b>
         <br />
-        Highspeed WIFI
+        <b>Highspeed WIFI</b>
+        <br />
+        <b>Parking space free of charge</b>
       </>
     ),
   },
@@ -137,11 +138,6 @@ const apartmentInfo: ApartmentInfoItem[] = [
     description: (
       <>Pet-friendly with nearby parks and beaches for your furry friends.</>
     ),
-  },
-  {
-    icon: FaParking,
-    title: "PARKING",
-    description: <>Public & Private parking Free of cost</>,
   },
   {
     icon: FaSwimmingPool,

@@ -75,8 +75,6 @@
 }
 
 .distanceItem {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     margin-bottom: 0.5em;
 }
@@ -103,6 +101,11 @@
 
     .infoHeading {
         font-size: 2em;
+    }
+
+    .distanceItem {
+        display: flex;
+        justify-content: space-between;
     }
 
     .infoDescription,
