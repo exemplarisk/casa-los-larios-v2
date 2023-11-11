@@ -33,6 +33,9 @@ const BookingSection: React.FC = () => {
     setModalIsOpen(false);
   };
 
+  const totalNights = calculateTotalNights();
+  const isReserveButtonDisabled = totalNights <= 0;
+
   return (
     <div className={styles.container}>
       <h1 className={styles.pageTitle}>Book Your Stay</h1>
@@ -81,7 +84,18 @@ const BookingSection: React.FC = () => {
           <span>Total Cost:</span>
           <strong>{calculateTotalCost().toFixed(2)} €</strong>
         </div>
-        <button onClick={initReservation} className={styles.reserveButton}>
+        <button
+          onClick={initReservation}
+          className={`${styles.reserveButton} ${
+            isReserveButtonDisabled ? styles.disabledButton : ""
+          }`}
+          disabled={isReserveButtonDisabled}
+          title={
+            isReserveButtonDisabled
+              ? "Please select at least one night to reserve"
+              : ""
+          }
+        >
           Reserve
         </button>
       </div>
