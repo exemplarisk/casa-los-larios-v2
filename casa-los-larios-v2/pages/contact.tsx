@@ -11,10 +11,7 @@ function contact() {
         <meta name="description" content="Contact Casa-Los-Larios" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div>
-        <ContactInfo/>
-      </div>
+      <ContactInfo/>
     </Layout>
   );
 }

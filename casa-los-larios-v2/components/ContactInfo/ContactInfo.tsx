@@ -19,18 +19,23 @@ const ContactInfo: React.FC = () => {
         <h2>Contact Us</h2>
       </div>
       <div className={styles.contactDetails}>
-        <div className={styles.contactCard}>
+        <a
+          href="http://maps.google.com/?q=C. Guapiles 7, 03189, Orihuela, Alicante, Spain"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.contactCard}
+        >
           <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
           <span>C. Guapiles 7, 03189, Orihuela, Alicante, Spain</span>
-        </div>
-        <div className={styles.contactCard}>
+        </a>
+        <a href="mailto:info@casaloslarios.com" className={styles.contactCard}>
           <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
-          <a href="mailto:info@casaloslarios.com">info@casaloslarios.com</a>
-        </div>
-        <div className={styles.contactCard}>
+          <span>info@casaloslarios.com</span>
+        </a>
+        <a href="tel:+123-456-78900" className={styles.contactCard}>
           <FontAwesomeIcon icon={faPhone} className={styles.icon} />
-          <a href="tel:+123-456-7890">+123-456-7890</a>
-        </div>
+          <span>+123-456-78900</span>
+        </a>
       </div>
       <div className={styles.connectSection}>
         <h3>Connect</h3>

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8em;
+    padding: 8em 2em;
     margin: auto;
     max-width: 800px;
     background: #f9f9f9;
@@ -29,6 +29,7 @@
     margin: 0.5em 0;
     cursor: pointer;
     background-color: #e6f7ff;
+    text-decoration: none;
 }
 
 .contactCard:hover {
@@ -36,6 +37,13 @@
         /* A subtle hover effect for background */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         /* Optional: Adds depth on hover */
+        text-decoration: none;
+}
+
+.contactCard,
+.contactCard:hover,
+.contactCard:focus {
+    color: inherit;
 }
 
 .contactCard a {
@@ -47,6 +55,7 @@
     font-size: 1.2em;
     color: #333;
     margin-bottom: 2em;
+    display: inline-grid;
 }
 
 .contactDetails p {
@@ -57,14 +66,9 @@
 
 .icon {
     margin-right: 10px;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #005f73;
     max-height: 6em;
-}
-
-.connectSection {
-    text-align: center;
-    margin-top: 2em;
 }
 
 .connectSection h3 {
@@ -90,7 +94,7 @@
 
 @media (max-width: 768px) {
     .contactSection {
-        padding: 20px;
+        padding: 8em 0.5em;
     }
 
         .contactHeader h2 {
