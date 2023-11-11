@@ -64,6 +64,17 @@
     width: 100%;
 }
 
+.imageSlider img {
+    width: 100%;
+    
+    height: 500px;
+    
+    object-fit: cover;
+    
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
 .sliderImage,
 .active {
     width: 100%;

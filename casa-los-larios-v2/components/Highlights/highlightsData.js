@@ -3,7 +3,7 @@ const highlightsData = [
     image: "/summergetaway.jpg",
     title: "Luxurious Comfort",
     description:
-      "Experience the ultimate in comfort with our fully equipped, modern apartments.",
+      "Experience the ultimate in comfort with our fully equipped, modern apartment.",
   },
   {
     image: "/beachfront.jpg",
@@ -18,7 +18,7 @@ const highlightsData = [
       "Savor the taste of local Spanish cuisine at nearby gourmet restaurants or through our in-house dining options.",
   },
   {
-    image: "/pool-view.jpg",
+    image: "/aparoutd.jpg",
     title: "Serene Pools",
     description:
       "Take a dip in our exclusive, crystal-clear pools for a refreshing aquatic retreat any time of the day.",
