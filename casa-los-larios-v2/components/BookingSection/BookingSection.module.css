@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding: 2em;
+    padding: 8em 0;
 }
 
 .pageTitle {
@@ -95,6 +95,14 @@
     background-color: #f14344;
 }
 
+.confirmationModal {
+    padding: 10em 2em;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2001;
+}
+
 .modal {
     background: #fff;
     border-radius: 8px;
@@ -107,6 +115,58 @@
     width: 90%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     outline: none;
+    z-index: 1001;
+}
+
+.bookingSummary {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    background: #ffffff;
+}
+
+.bookingSummary h2 {
+    color: #27ae60;
+    /* Success color */
+    margin-bottom: 1rem;
+}
+
+.bookingSummary p {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.homeButton {
+    background-color: #27ae60;
+    /* Success color */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.homeButton:hover {
+    background-color: #2ecc71;
+    /* Lighter success color */
+}
+
+.confirmationButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.confirmationButton:hover {
+    background-color: #45a049;
 }
 
 .modal h2 {
@@ -153,28 +213,28 @@
 .modal button.closeButton {
     padding: 8px 15px;
     border: 1px solid #ccc;
-    
+
     background-color: #f8f8f8;
-    
+
     color: #333;
-    
+
     font-size: 14px;
-    
+
     margin-top: 20px;
-    
+
     transition: background-color 0.2s, color 0.2s;
-    
+
     outline: none;
-    
+
 }
 
 .modal button.closeButton:hover {
     background-color: #e6e6e6;
-    
+
     color: #005f73;
-    
+
     border-color: #005f73;
-    
+
 }
 
 .modal button:hover {
@@ -207,18 +267,26 @@
     .datePickerSection {
         margin-right: 0;
         margin-bottom: 2rem;
-        
+
     }
 
     .summaryContainer {
         grid-template-columns: 1fr;
-        
+
+    }
+
+    .bookingSummary {
+        padding: 1rem;
+    }
+
+    .homeButton {
+        padding: 0.6rem 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .summaryContainer {
-        padding: 12px;
+        max-width: 80%;
     }
 
     .reserveButton {
