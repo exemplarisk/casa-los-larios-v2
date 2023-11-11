@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: "none" }}>
           <h1>C-L</h1>
         </Link>
         <p>Your Ideal Summer Getaway</p>
@@ -28,6 +28,10 @@ const Header: React.FC = () => {
           <li>
             <Link href="/">Home</Link>
           </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+
           <li>
             <Link href="/gallery">Gallery</Link>
           </li>

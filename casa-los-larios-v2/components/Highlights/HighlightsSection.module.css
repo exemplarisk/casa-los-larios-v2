@@ -1,0 +1,59 @@
+.highlightsSection {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+.highlightsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlightCard {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.highlightCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlightCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.highlightCard h3 {
+    color: #123456;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.highlightCard p {
+    color: #454545;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .highlightsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .highlightsGrid {
+        grid-template-columns: 1fr;
+    }
+}
