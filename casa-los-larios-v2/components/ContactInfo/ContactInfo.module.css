@@ -1,89 +1,115 @@
+.container {
+    background: url('/summergetaway.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    /* Added to position overlay */
+}
+
+.overlay {
+    /* Overlay to enhance text contrast */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white overlay */
+    z-index: 1;
+}
+
 .contactSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8em 2em;
+    padding: 8em 1em;
+    /* Adjusted padding */
     margin: auto;
     max-width: 800px;
-    background: #f9f9f9;
+    background: rgba(255, 255, 255, 0.9);
+    /* Light background for contrast */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* More pronounced shadow */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    z-index: 2;
+    /* To be above the overlay */
+    position: relative;
+    /* To be positioned correctly within the overlay */
 }
 
 .contactHeader {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    /* Adjusted spacing */
 }
 
 .contactHeader h2 {
-    color: #005f73;
-    font-size: 2em;
+    color: #0277bd;
+    /* Changed color for better visibility */
+    font-size: 2.5em;
+    /* Increased font size */
+    font-weight: bold;
+    /* Made the title bold */
 }
 
 .contactCard {
     padding: 1em;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     align-items: center;
     margin: 0.5em 0;
     cursor: pointer;
-    background-color: #e6f7ff;
+    background-color: #ffffff;
+    /* Changed to white for better contrast */
     text-decoration: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contactCard:hover {
-background-color: #d0efff;
-    /* Lighter color on hover */
+    background-color: #f1f1f1;
+    /* Light grey on hover for feedback */
+    transform: scale(1.02);
+    /* Slight grow effect on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Increased shadow on hover */
-}
-
-.contactCard,
-.contactCard:hover,
-.contactCard:focus {
-    color: inherit;
 }
 
 .contactCard a {
     display: flex;
     align-items: center;
-    /* Ensure vertical alignment */
     width: 100%;
+    color: #005f73;
+    /* Ensuring text color is consistent */
 }
 
 .contactDetails {
     font-size: 1em;
-    /* Adjusted for mobile readability */
     color: #333;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
-    /* Ensures vertical stacking of contact cards */
 }
 
 .contactDetails p {
     margin: 0.8em 0;
-    /* Reduced vertical spacing */
 }
 
 .icon {
     margin-right: 10px;
     font-size: 1.5em;
     color: #005f73;
-    /* Removed max-height to allow the icon to scale with font size */
 }
 
 .connectSection h3 {
     color: #005f73;
     margin-bottom: 1em;
+    font-size: 2em;
+    /* Increased the font size */
 }
 
 .socialIcon {
     color: #005f73;
     font-size: 1.5em;
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcon:hover,
@@ -96,18 +122,17 @@ background-color: #d0efff;
 @media (max-width: 768px) {
     .contactSection {
         padding: 8em 1em;
-        /* Adjusted padding for mobile */
+        /* Reduced padding on mobile */
     }
 
     .contactHeader h2 {
         font-size: 1.5rem;
-        /* Font size reduced for mobile */
+        /* Reduced font size on mobile */
     }
 
     .contactCard {
-        /* Added styling for the mobile view of contact cards */
         display: grid;
-        grid-template-columns: auto 0.7fr;
+        grid-template-columns: 0.5fr 1fr;
         gap: 10px;
         align-items: center;
         padding: 0.8em;
@@ -115,11 +140,11 @@ background-color: #d0efff;
 
     .socialIcon {
         font-size: 1.25em;
-        /* Slightly reduced for mobile */
+        /* Adjusted icon size on mobile */
     }
 
     .icon {
         font-size: 1.25em;
-        /* Reduced icon size for mobile */
+        /* Adjusted icon size on mobile */
     }
 }
