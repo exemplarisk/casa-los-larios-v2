@@ -108,5 +108,6 @@
     
         .icon {
             font-size: 1.25em;
+            max-height: 2em;
         }
 }
