@@ -3,27 +3,35 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding: 10em 25px;
+    padding: 2em;
+}
+
+.pageTitle {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1em;
 }
 
 .calendarContainer {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
-.datePickerContainer {
-    display: flex;
-    justify-content: space-around;
-    padding: 16px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.datePickerSection {
     text-align: center;
+    margin: 0;
+    margin-right: 2rem;
+}
+
+.datePickerSection:last-child {
+    margin-right: 0;
+}
+
+.datePickerLabel {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 8px;
 }
 
 .summaryContainer {
@@ -35,38 +43,26 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
-.summaryHeader {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    font-weight: bold;
+.costItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
 }
 
-.summaryHeader p {
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-}
-
-.summaryHeader span {
-    font-weight: bold;
-    display: block;
-    font-size: 1.5rem;
-    color: #FF5A5F;
-}
-
-.dateSelection p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-}
-
-.dateSelection span {
-    font-weight: bold;
+.totalCostLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
     font-size: 1.25rem;
-    color: #333;
+    color: #FF5A5F;
+    font-weight: bold;
 }
 
 .reserveButton {
@@ -80,7 +76,7 @@
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 16px;
+    margin-top: 2rem;
     text-align: center;
 }
 
@@ -88,84 +84,124 @@
     background-color: #f14344;
 }
 
-.datePickers {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.datePickerSection {
-    text-align: center;
-    margin: 0;
-}
-
-.datePickerTitle {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    color: #333;
-}
-
-.datePickerLabel {
-    font-size: 1.25rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 8px;
-}
-
 .modal {
-    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    position: absolute;
     top: 50%;
     left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: '-50%';
-    transform: 'translate(-50%, -50%)';
-    border: 1px solid #ccc;
-    background: #fff;
-    overflow: 'auto';
-    -webkit-overflow-scrolling: 'touch';
-    border-radius: '4px';
-    outline: 'none';
-    padding: '20px';
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 
-.overlay {
-    position: 'fixed';
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: 'rgba(255, 255, 255, 0.75)'
-}
-
-.pageTitle {
-    text-align: center;
+.modal h2 {
     color: #333;
-    margin-bottom: 1em;
+    margin-bottom: 16px;
+}
+
+.modal form {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.modal input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal button[type="submit"] {
+    background-color: #005f73;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #0a9396;
+}
+
+.modal button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: none;
+    color: #005f73;
+    font-size: 16px;
+}
+
+.modal button.closeButton {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    
+    background-color: #f8f8f8;
+    
+    color: #333;
+    
+    font-size: 14px;
+    
+    margin-top: 20px;
+    
+    transition: background-color 0.2s, color 0.2s;
+    
+    outline: none;
+    
+}
+
+.modal button.closeButton:hover {
+    background-color: #e6e6e6;
+    
+    color: #005f73;
+    
+    border-color: #005f73;
+    
+}
+
+.modal button:hover {
+    text-decoration: underline;
+}
+
+.modal .orderSummary {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+}
+
+.modal .orderSummary p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .orderSummary span {
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 8em 10px;
-    }
-
-    .summaryContainer {
-        width: 100%;
-    }
-
-    .datePickers {
-        flex-direction: column;
-    }
-
     .calendarContainer {
         flex-direction: column;
         align-items: center;
     }
 
     .datePickerSection {
-        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        
+    }
+
+    .summaryContainer {
+        grid-template-columns: 1fr;
+        
     }
 }
 

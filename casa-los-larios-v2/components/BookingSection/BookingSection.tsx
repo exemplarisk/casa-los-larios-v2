@@ -3,29 +3,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./BookingSection.module.css";
 import Modal from "react-modal";
+import bookedDates from "./bookedDates";
 
 Modal.setAppElement("#root");
 
 const BookingSection: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const pricePerNight = 150;
-
-  const bookedDates = [
-    new Date("2023-12-25"),
-    new Date("2023-12-26"),
-    new Date("2023-12-27"),
-    new Date("2023-11-19"),
-    new Date("2023-11-20"),
-    new Date("2023-11-29"),
-    new Date("2023-11-30"),
-    new Date("2024-01-08"),
-    new Date("2024-01-09"),
-    new Date("2024-01-10"),
-    new Date("2024-01-11"),
-    new Date("2024-01-12"),
-  ];;
+  const serviceFee = 50;
 
   const calculateTotalNights = () => {
     if (!startDate || !endDate) return 0;
@@ -33,29 +20,17 @@ const BookingSection: React.FC = () => {
   };
 
   const calculateTotalCost = () => {
-    return calculateTotalNights() * pricePerNight;
+    return calculateTotalNights() * pricePerNight + serviceFee;
   };
 
-  const openModal = () => {
-    if (!startDate || !endDate) {
-      alert("Please select both check-in and check-out dates.");
-      return;
-    }
+  const initReservation = () => {
     setModalIsOpen(true);
   };
 
-  const afterOpenModal = () => {
-    // Perform actions after modal opens if necessary
-  };
-
-  const closeModal = () => {
+  const handleReservationSubmit = (userData) => {
+    // Process user data and send an email
+    console.log("User Data:", userData);
     setModalIsOpen(false);
-  };
-
-  const initiatePayment = () => {
-    // Simulate payment initiation logic
-    console.log("Payment initiated");
-    closeModal();
   };
 
   return (
@@ -66,72 +41,88 @@ const BookingSection: React.FC = () => {
           <h3 className={styles.datePickerLabel}>Check-in</h3>
           <DatePicker
             selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            onChange={setStartDate}
             startDate={startDate}
             endDate={endDate}
             selectsStart
             minDate={new Date()}
             excludeDates={bookedDates}
             inline
-            monthsShown={1}
           />
         </div>
         <div className={styles.datePickerSection}>
           <h3 className={styles.datePickerLabel}>Check-out</h3>
           <DatePicker
             selected={endDate}
-            onChange={(date) => setEndDate(date)}
+            onChange={setEndDate}
             selectsEnd
             startDate={startDate}
             endDate={endDate}
             minDate={startDate}
             excludeDates={bookedDates}
             inline
-            monthsShown={1}
           />
         </div>
       </div>
       <div className={styles.summaryContainer}>
-        <div className={styles.summaryHeader}>
-          <p>
-            <strong>Total Nights:</strong> <span>{calculateTotalNights()}</span>
-          </p>
-          <p>
-            <strong>Total Cost:</strong>{" "}
-            <span>{calculateTotalCost().toFixed(2)} €</span>
-          </p>
+        <div className={styles.costItem}>
+          <span>Price per Night:</span>
+          <strong>{pricePerNight.toFixed(2)} €</strong>
         </div>
-        <div className={styles.dateSelection}>
-          <p>
-            <strong>Check-in:</strong>{" "}
-            <span>
-              {startDate ? startDate.toLocaleDateString() : "Select date"}
-            </span>
-          </p>
-          <p>
-            <strong>Check-out:</strong>{" "}
-            <span>
-              {endDate ? endDate.toLocaleDateString() : "Select date"}
-            </span>
-          </p>
+        <div className={styles.costItem}>
+          <span>Total Nights:</span>
+          <strong>{calculateTotalNights()}</strong>
         </div>
-        <button onClick={openModal} className={styles.reserveButton}>
+        <div className={styles.costItem}>
+          <span>Service Fee:</span>
+          <strong>{serviceFee.toFixed(2)} €</strong>
+        </div>
+        <div className={styles.totalCostLine}>
+          <span>Total Cost:</span>
+          <strong>{calculateTotalCost().toFixed(2)} €</strong>
+        </div>
+        <button onClick={initReservation} className={styles.reserveButton}>
           Reserve
         </button>
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          contentLabel="Booking Details Form"
-          className={styles.modal}
-          overlayClassName={styles.overlay}
-        >
-          <h2>Booking Details</h2>
-          <button onClick={closeModal}>close</button>
-          {/* Form fields for booking details */}
-          <button onClick={initiatePayment}>Confirm Reservation</button>
-        </Modal>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Enter Booking Details"
+        className={styles.modal}
+      >
+        <h2>Enter Booking Details</h2>
+        <div className={styles.orderSummary}>
+          <p>
+            <span>Total Nights:</span>
+            <span>{calculateTotalNights()} nights</span>
+          </p>
+          <p>
+            <span>Price per Night:</span>
+            <span>{pricePerNight.toFixed(2)} €</span>
+          </p>
+          <p>
+            <span>Service Fee:</span>
+            <span>{serviceFee.toFixed(2)} €</span>
+          </p>
+          <p>
+            <span>Total Cost:</span>
+            <span>{(calculateTotalCost() + serviceFee).toFixed(2)} €</span>
+          </p>
+        </div>
+        <form onSubmit={handleReservationSubmit}>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          {}
+          <button type="submit">Submit Reservation</button>
+        </form>
+        <button
+          onClick={() => setModalIsOpen(false)}
+          className={`${styles.button} ${styles.closeButton}`}
+        >
+          Close
+        </button>
+      </Modal>
     </div>
   );
 };
