@@ -34,9 +34,9 @@
 
 .contactCard:hover {
     opacity: 0.9;
-        /* A subtle hover effect for background */
+        
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Optional: Adds depth on hover */
+        
         text-decoration: none;
 }
 
@@ -85,11 +85,11 @@
 .socialIcon:hover,
 .socialIcon:focus {
     color: #029dbb;
-        /* A lighter shade for interaction */
+        
         transform: translateY(-3px);
-        /* A subtle lift effect */
+        
     outline: none;
-    /* Accessibility: add focus styles if removing outline */
+    
 }
 
 @media (max-width: 768px) {
@@ -103,7 +103,7 @@
     
         .socialIcon {
             font-size: 1.25em;
-            /* Slightly smaller icons on mobile */
+            
         }
     
         .icon {
