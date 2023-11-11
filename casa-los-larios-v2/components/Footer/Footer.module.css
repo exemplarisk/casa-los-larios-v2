@@ -1,19 +1,15 @@
 .footer {
     color: #333;
     padding: 40px 0;
-    
-    text-align: center;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
     background-color: #f7f7f7;
-    border-bottom: 1px solid #eaeaea;
     border-top: 1px solid #eaeaea;
 }
 
 .footerContent {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -21,53 +17,30 @@
 
 .footerLogo,
 .contactInfo,
-.socialLinks {
-    padding: 0 10px;
+.socialLinks,
+.legalLinks {
+    text-align: center;
     margin-bottom: 20px;
-}
-
-
-.contactInfo h3,
-.socialLinks h3 {
-    color: #333;
-    
-    font-weight: 600;
-    
-    font-size: 1.25rem;
-    
-    margin-bottom: 0.5rem;
-    
-}
-
-.brandTitle {
-    font-size: 2em;
-    
-    font-weight: 700;
-    
-    color: #333;
-    
-}
-
-.tagline {
-    font-style: italic;
-    margin-bottom: 1rem;
-    
 }
 
 .legalLinks {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 20px;
+    gap: 15px;
+}
+
+.socialLinks h3 {
+    margin-bottom: 10px;
 }
 
 .socialIcon {
     color: #333;
     font-size: 24px;
     margin: 0 10px;
-    text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    
-    display: inline-block;
 }
 
 .socialIcon svg {
@@ -77,41 +50,51 @@
 
 .socialIcon:hover {
     color: #0070f3;
-    
     transform: scale(1.1);
-    
 }
 
 .link {
     color: #333;
-    margin: 0 15px;
     text-decoration: none;
     font-size: 16px;
+    padding: 5px 10px;
+    margin: 0;
 }
 
 .link:hover {
     text-decoration: underline;
 }
 
+.mapContainer {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 30px;
+    order: -1;
+}
 
-@media (max-width: 768px) {
-    .footerContent {
-        justify-content: center;
-        text-align: center;
-    }
+.mapIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    .footerLogo,
-    .contactInfo,
-    .socialLinks {
-        flex-basis: 100%;
-        
-        max-width: 100%;
-        
-    }
+.brandTitle {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+}
 
-    .socialIcon svg {
-        width: 24px;
-        
-        height: 24px;
-    }
+.tagline {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.contactInfo h3,
+.socialLinks h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
 }
