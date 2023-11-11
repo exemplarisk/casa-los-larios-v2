@@ -1,3 +1,11 @@
 .react-datepicker__month-container {
     float: none !important;
 }
+
+.react-datepicker__day--disabled,
+.react-datepicker__month-text--disabled,
+.react-datepicker__quarter-text--disabled,
+.react-datepicker__year-text--disabled {
+    background-color: #FF5A5F;
+    pointer-events: none;
+}
