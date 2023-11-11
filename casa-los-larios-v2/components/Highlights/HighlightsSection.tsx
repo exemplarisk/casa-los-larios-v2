@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HighlightsSection.module.css";
+import highlightsData from "./highlightsData";
 
 const HighlightCard = ({ image, title, description }) => (
   <div className={styles.highlightCard}>
@@ -10,20 +11,11 @@ const HighlightCard = ({ image, title, description }) => (
 );
 
 const HighlightsSection = () => {
-  const highlights = [
-    {
-      image: "/summergetaway.jpg",
-      title: "Luxurious Comfort",
-      description:
-        "Experience the ultimate in comfort with our fully equipped, modern apartments.",
-    },
-    // ... other highlights
-  ];
-
+  
   return (
     <section className={styles.highlightsSection}>
       <div className={styles.highlightsGrid}>
-        {highlights.map((highlight, index) => (
+        {highlightsData.map((highlight, index) => (
           <HighlightCard key={index} {...highlight} />
         ))}
       </div>
