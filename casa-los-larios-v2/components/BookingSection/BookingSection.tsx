@@ -62,15 +62,14 @@ const BookingSection: React.FC = () => {
     <div className={styles.container}>
       {showBookingSummary ? (
         <div className={styles.bookingSummary}>
-          <h2>Thank you for your booking!</h2>
+          <h2>We have received your booking!</h2>
           <p>
             Your reservation for {calculateTotalNights()} nights from{" "}
             {startDate?.toLocaleDateString()} to {endDate?.toLocaleDateString()}{" "}
-            has been confirmed.
+            is yet to be confirmed.
           </p>
           <p>
-            A confirmation email with an invoice will be sent to you once the
-            host has confirmed your booking
+            A confirmation email with an invoice will be sent to you once we have confirmed your reservation!
           </p>
           <button
             onClick={() => {
@@ -207,7 +206,7 @@ const BookingSection: React.FC = () => {
             <h2>Booking Confirmation</h2>
             <p>
               Your reservation request has been received. An invoice will be
-              sent to your email once the host has confirmed your reservation.
+              sent to your email once we have confirmed your reservation.
             </p>
             <button
               onClick={bookingConfirmed}

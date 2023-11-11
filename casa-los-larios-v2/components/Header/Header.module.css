@@ -38,6 +38,10 @@
 
 }
 
+.navigation {
+    z-index: 0;
+}
+
 .navigation ul {
     list-style: none;
     padding: 0;
