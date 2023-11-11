@@ -1,5 +1,5 @@
 import React from "react";
-import ContactForm from "../components/ContactForm/ContactForm";
+import ContactInfo from "../components/ContactInfo/ContactInfo";
 import Head from "next/head";
 import Layout from "../components/Layout/Layout";
 
@@ -13,7 +13,7 @@ function contact() {
       </Head>
 
       <div>
-        <ContactForm />
+        <ContactInfo/>
       </div>
     </Layout>
   );
