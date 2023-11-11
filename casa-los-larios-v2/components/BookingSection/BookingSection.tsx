@@ -60,9 +60,10 @@ const BookingSection: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.datePickers}>
-        <div className={styles.datePickerContainer}>
-          <h3 className={styles.datePickerTitle}>Check-in</h3>
+      <h1 className={styles.pageTitle}>Book Your Stay</h1>
+      <div className={styles.calendarContainer}>
+        <div className={styles.datePickerSection}>
+          <h3 className={styles.datePickerLabel}>Check-in</h3>
           <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
@@ -75,8 +76,8 @@ const BookingSection: React.FC = () => {
             monthsShown={1}
           />
         </div>
-        <div className={styles.datePickerContainer}>
-          <h3 className={styles.datePickerTitle}>Check-out</h3>
+        <div className={styles.datePickerSection}>
+          <h3 className={styles.datePickerLabel}>Check-out</h3>
           <DatePicker
             selected={endDate}
             onChange={(date) => setEndDate(date)}
