@@ -32,7 +32,11 @@ const ContactInfo: React.FC = () => {
           <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
           <span>info@casaloslarios.com</span>
         </a>
-        <a href="tel:+123-456-78900" className={styles.contactCard}>
+        <a
+          href="tel:+123-456-78900"
+          className={styles.contactCard}
+          aria-label="Call us"
+        >
           <FontAwesomeIcon icon={faPhone} className={styles.icon} />
           <span>+123-456-78900</span>
         </a>
@@ -41,7 +45,7 @@ const ContactInfo: React.FC = () => {
         <h3>Connect</h3>
         <div className={styles.socialIcons}>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/pages/Casa-Los-Larios/1681075912157305"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -50,7 +54,7 @@ const ContactInfo: React.FC = () => {
             <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/jonatan-schultz/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}

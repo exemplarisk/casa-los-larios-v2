@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         <nav className={styles.socialLinks}>
           <h3>Connect</h3>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/pages/Casa-Los-Larios/1681075912157305"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}

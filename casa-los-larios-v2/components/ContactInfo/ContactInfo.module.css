@@ -18,7 +18,7 @@
 
 .contactHeader h2 {
     color: #005f73;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .contactCard {
@@ -30,14 +30,14 @@
     cursor: pointer;
     background-color: #e6f7ff;
     text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contactCard:hover {
-    opacity: 0.9;
-        
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        
-        text-decoration: none;
+background-color: #d0efff;
+    /* Lighter color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Increased shadow on hover */
 }
 
 .contactCard,
@@ -47,28 +47,32 @@
 }
 
 .contactCard a {
-    width: 100%;
     display: flex;
+    align-items: center;
+    /* Ensure vertical alignment */
+    width: 100%;
 }
 
 .contactDetails {
-    font-size: 1.2em;
+    font-size: 1em;
+    /* Adjusted for mobile readability */
     color: #333;
     margin-bottom: 2em;
-    display: inline-grid;
+    display: flex;
+    flex-direction: column;
+    /* Ensures vertical stacking of contact cards */
 }
 
 .contactDetails p {
-    display: flex;
-    align-items: center;
-    margin: 1em 0;
+    margin: 0.8em 0;
+    /* Reduced vertical spacing */
 }
 
 .icon {
     margin-right: 10px;
     font-size: 1.5em;
     color: #005f73;
-    max-height: 6em;
+    /* Removed max-height to allow the icon to scale with font size */
 }
 
 .connectSection h3 {
@@ -85,29 +89,37 @@
 .socialIcon:hover,
 .socialIcon:focus {
     color: #029dbb;
-        
-        transform: translateY(-3px);
-        
+    transform: translateY(-3px);
     outline: none;
-    
 }
 
 @media (max-width: 768px) {
     .contactSection {
-        padding: 8em 0.5em;
+        padding: 8em 1em;
+        /* Adjusted padding for mobile */
     }
 
-        .contactHeader h2 {
-            font-size: 1.5rem;
-        }
-    
-        .socialIcon {
-            font-size: 1.25em;
-            
-        }
-    
-        .icon {
-            font-size: 1.25em;
-            max-height: 2em;
-        }
+    .contactHeader h2 {
+        font-size: 1.5rem;
+        /* Font size reduced for mobile */
+    }
+
+    .contactCard {
+        /* Added styling for the mobile view of contact cards */
+        display: grid;
+        grid-template-columns: auto 0.7fr;
+        gap: 10px;
+        align-items: center;
+        padding: 0.8em;
+    }
+
+    .socialIcon {
+        font-size: 1.25em;
+        /* Slightly reduced for mobile */
+    }
+
+    .icon {
+        font-size: 1.25em;
+        /* Reduced icon size for mobile */
+    }
 }
