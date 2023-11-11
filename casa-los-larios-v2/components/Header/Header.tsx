@@ -13,7 +13,9 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <h1>C-L</h1>
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1>C-L</h1>
+        </Link>
         <p>Your Ideal Summer Getaway</p>
       </div>
       <button onClick={toggleNav} className={styles.navToggle}>
