@@ -17,14 +17,11 @@
 .infoGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    
+    gap: 5vw;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    
     padding: 0 15px;
-    
 }
 
 .infoItem {
@@ -34,14 +31,9 @@
     text-align: center;
     background: #ffffff;
     padding: 35px;
-    
     width: 100%;
-    max-width: 300px;
-    
     border-radius: 15px;
-    
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -52,97 +44,70 @@
 
 .infoIcon {
     font-size: 3em;
-    
     color: #4a90e2;
-    
     margin-bottom: 1em;
 }
 
 .infoTitle {
     font-weight: 700;
-    
-    font-size: 1.4em;
-    
+    font-size: 1.5em;
     margin-bottom: 0.5em;
     color: #333;
 }
 
 .infoDescription {
-    font-size: 1em;
-    
+    font-size: 1.1em;
     color: #666;
-    line-height: 1.6;
-    
+    line-height: 1.8;
     text-align: justify;
-    
 }
 
 .restaurantLink {
     font-weight: bold;
-    
     color: #1a73e8;
-    
     text-decoration: none;
-    
     transition: color 0.2s ease-in-out;
-    
 }
 
 .restaurantLink:hover {
     text-decoration: underline;
-    
     color: #2a5db0;
-    
 }
 
 .distanceItem {
     display: flex;
     justify-content: space-between;
-    
     width: 100%;
-    
     margin-bottom: 0.5em;
-    
 }
 
 .distanceItem b {
-    margin-right: 0.5em;
-    
     font-weight: 600;
-    
 }
 
 .distanceItem p {
     margin: 0;
-    
 }
 
 @media (max-width: 768px) {
     .infoGrid {
         gap: 20px;
-        
         padding: 0;
-        
     }
 
     .infoItem {
         max-width: 90%;
-        
         margin: 15px auto;
-        
         padding: 25px;
-        
     }
 
     .infoHeading {
         font-size: 2em;
-        
     }
 
     .infoDescription,
     .distanceItem b,
     .distanceItem p {
         text-align: left;
-        
     }
 }
