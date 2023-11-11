@@ -16,7 +16,9 @@ const BookingSection: React.FC = () => {
 
   const calculateTotalNights = () => {
     if (!startDate || !endDate) return 0;
-    return (endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24);
+    return Math.round(
+      (endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24)
+    );
   };
 
   const calculateTotalCost = () => {
@@ -109,7 +111,9 @@ const BookingSection: React.FC = () => {
         <div className={styles.orderSummary}>
           <p>
             <span>Total Nights:</span>
-            <span>{calculateTotalNights()} nights</span>
+            <span>
+              {calculateTotalNights()}
+            </span>
           </p>
           <p>
             <span>Price per Night:</span>
