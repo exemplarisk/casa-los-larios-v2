@@ -1,40 +1,53 @@
 .hero {
-    background-color: #F5F5F5;
-    color: #333;
+    background: url('/seaview1.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
     text-align: center;
-    padding-bottom: 100px;
+    padding: 150px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
 .heroContent {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #1a1a1a;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
+    font-size: 20px;
+    margin-bottom: 40px;
 }
 
 .ctaButton {
-    background-color: #1a1a1a;
+    background-color: #008f68;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 700;
+    font-size: 20px;
+    transition: transform 0.3s ease;
 }
 
 .ctaButton:hover {
-    background-color: #ffd700;
-    color: #1a1a1a;
+    transform: translateY(-3px);
 }
