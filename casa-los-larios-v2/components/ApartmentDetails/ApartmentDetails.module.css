@@ -3,15 +3,23 @@
     flex-direction: column;
     align-items: center;
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    background: url('/poolviewhero.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .infoHeading {
+    font-size: 3em;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);    
+    margin: 0;
     text-align: center;
-    font-size: 2.5em;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 10px;
+    max-width: 80%;
     margin-bottom: 1em;
-    font-weight: 600;
-    color: #333;
+    padding: 0.5em;
 }
 
 .infoGrid {
@@ -95,12 +103,12 @@
 
     .infoItem {
         max-width: 90%;
-        margin: 15px auto;
-        padding: 25px;
+        padding: 25px 20px;
     }
 
     .infoHeading {
         font-size: 2em;
+        padding: 0.3em 0;
     }
 
     .distanceItem {
