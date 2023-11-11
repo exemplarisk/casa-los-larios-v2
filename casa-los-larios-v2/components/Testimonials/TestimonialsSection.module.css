@@ -1,11 +1,13 @@
 .testimonials {
-    background-color: #f9f9f9;
+    background-color: #f0f8ff;
+    /* A light, calming blue */
     padding: 50px 20px;
     text-align: center;
 }
 
 .heading {
-    color: #333;
+    color: #204056;
+    /* A darker shade for contrast */
     font-size: 2.5rem;
     margin-bottom: 30px;
 }
@@ -26,22 +28,48 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: scale(0.9);
     transition: transform 0.3s ease;
+    position: relative;
+    /* For pseudo-elements */
+}
+
+.testimonial::before {
+    content: '“';
+    font-size: 4rem;
+    color: #f9a825;
+    /* A vibrant yellow for the quote icon */
+    position: absolute;
+    top: -10px;
+    left: 20px;
+}
+
+.testimonial::after {
+    content: '”';
+    font-size: 4rem;
+    color: #f9a825;
+    /* A vibrant yellow for the quote icon */
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
 }
 
 .testimonial:hover {
     transform: scale(1);
+    background-color: #e8f4fd;
+    /* A subtle highlight on hover */
 }
 
 .quote {
     font-style: italic;
     line-height: 1.6;
     color: #555;
+    margin: 20px 0;
+    /* Give some space for the quote marks */
 }
 
 .author {
     margin-top: 20px;
     font-weight: bold;
-    color: #333;
+    color: #204056;
 }
 
 /* Responsiveness */

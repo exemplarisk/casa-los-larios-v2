@@ -1,164 +1,72 @@
-.apartmentDetails {
-    background-color: #fff;
-    padding: 80px 20px;
-    box-sizing: border-box;
+/* ApartmentDetails.module.css */
+.infoSection {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
 }
 
-.detailsContent {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 960px;
-    gap: 30px;
-    width: 100%;
-}
-
-.detailsText {
-    flex: 1;
-    text-align: left;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background: #f9f9f9;
-    margin: 10px;
-    max-width: 440px;
-}
-
-.detailsText h2 {
-    font-size: 1.75rem;
-    margin-bottom: 20px;
+.infoHeading {
+    text-align: center;
+    font-size: 2em;
+    /* Using em to be more responsive */
+    margin-bottom: 1em;
+    font-weight: 600;
     color: #333;
-    font-weight: bold;
 }
 
-.detailsText p,
-.detailsText ul li {
-    font-size: 0.95rem;
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    /* Set max-width to prevent too wide cards on large screens */
+    margin: auto;
+    /* Center grid in the section */
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #ffffff;
+    padding: 1.25em;
+    border-radius: 10px;
+    /* Increased border radius for modern look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.infoItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.infoIcon {
+    width: 3em;
+    height: 3em;
+    margin-bottom: 0.75em;
+    color: #4a90e2;
+    /* A refreshing color for the icons */
+}
+
+.infoTitle {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.infoDescription {
+    font-size: 1em;
     color: #666;
-    line-height: 1.6;
-}
-
-.detailsText ul {
-    padding-left: 20px;
-}
-
-.detailsText ul li {
-    list-style: disc;
-    margin-bottom: 8px;
-}
-
-.detailsImage {
-    flex: 1;
-    max-width: 440px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.imageSlider {
-    position: relative;
-    width: 100%;
-}
-
-.imageSlider img {
-    width: 100%;
-    
-    height: 500px;
-    
-    object-fit: cover;
-    
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.sliderImage,
-.active {
-    width: 100%;
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-.prevButton,
-.nextButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 24px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 10;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 20px;
-}
-
-.prevButton {
-    left: 10px;
-}
-
-.nextButton {
-    right: 10px;
-}
-
-.prevButton:hover,
-.nextButton:hover {
-    background-color: #333;
-}
-
-.reservationButton {
-    background-color: #008f68;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    text-decoration: none;
-}
-
-.reservationButton:hover {
-    background-color: #006c54;
-}
-
-@media (max-width: 992px) {
-    .detailsContent {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .detailsText,
-    .detailsImage {
-        max-width: 100%;
-        flex-basis: 100%;
-    }
-
-    .imageSlider {
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 768px) {
-    .apartmentDetails {
-        padding: 40px 10px;
-    }
-
-    .detailsContent {
-        gap: 20px;
+    .infoGrid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
     }
 }
