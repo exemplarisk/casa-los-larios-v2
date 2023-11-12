@@ -37,8 +37,7 @@ export const TermsContent: React.FC = () => {
         <p>
           You can cancel your booking up to 30 days before the start of your
           rental period for a full refund. Cancellations made less than 30 days
-          before the rental period will not be eligible for a refund. Please
-          consider travel insurance to protect against unexpected circumstances.
+          before the rental period will not be eligible for a refund.
         </p>
       </section>
 
