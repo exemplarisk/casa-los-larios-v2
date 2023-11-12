@@ -32,7 +32,7 @@ const Gallery: React.FC = () => {
         </div>
       )}
       <div className={styles.gallery}>
-        <h2 className={styles.title}>Apartment Photo Gallery</h2>
+        <h2 className={styles.title}>Photo Gallery</h2>
         <div className={styles.grid}>
           {images.map((src, index) => (
             <div
