@@ -149,6 +149,7 @@
     .navigation li {
         width: 95%;
         padding-right: 0.5em;
+        margin-right: 1em;
     }
 
     .navToggle {
