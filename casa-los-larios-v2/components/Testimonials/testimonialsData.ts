@@ -7,17 +7,17 @@ const testimonials = [
   {
     quote:
       "Orihuela Costa är underbart! Flera stränder på promenadavstånd från lägenheten med massor av trevliga restauranger på vägen",
-    author: "Sara med vänner",
+    author: "Okänd",
   },
   {
     quote:
       "Alltid lika trevligt att komma tillbaka till Casa Los Larios",
-    author: "Fam Simonsson",
+    author: "Okänd",
   },
   {
     quote:
       "Rymlig lägenhet med underbar terrass! Härlig pool, strålande sol, och ett trevligt bemötande gjorde vår resa tip top",
-    author: "A Lundström",
+    author: "Okänd",
   },
 ];
 
