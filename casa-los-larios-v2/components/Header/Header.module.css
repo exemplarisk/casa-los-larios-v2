@@ -109,21 +109,21 @@
     }
 
     .logo {
-        /* Allow the logo to grow */
+        
         text-align: left;
-        /* Align the text to the left */
+        
         margin-left: 0;
-        /* Reset any margin */
+        
         max-width: 13em;
     }
 
     .headerCenter {
         order: 2;
-        /* Center position for languageSwitcher and potentially other elements */
+        
         flex: 0 1 auto;
-        /* Do not grow but allow shrink */
+        
         justify-content: center;
-        /* Center items */
+        
     }
 
     .navigation {
@@ -163,9 +163,9 @@
 
     .navToggle {
         display: block;
-        /* Show the navToggle */
+        
         order: 3;
-        /* Set order to push it to the right */
+        
         position: absolute;
         top: 20px;
         right: 20px;
