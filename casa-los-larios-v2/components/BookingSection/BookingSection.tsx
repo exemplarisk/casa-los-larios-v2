@@ -19,6 +19,7 @@ const BookingSection: React.FC = () => {
   const [bookingDetails, setBookingDetails] = useState({
     fullName: "",
     email: "",
+    guests: 1,
   });
   const pricePerNight = 150;
   const serviceFee = 50;
@@ -47,10 +48,10 @@ const BookingSection: React.FC = () => {
   const handleReservationSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const { fullName, email } = bookingDetails;
+    const { fullName, email, guests } = bookingDetails;
     const formattedStartDate = new Date(startDate).toDateString();
     const formattedEndDate = new Date(endDate).toDateString();
-    const emailBody = `Hi! I would like to make a reservation for below dates:\n\nName: ${fullName}\nEmail: ${email}\nDates: ${formattedStartDate} - ${formattedEndDate}\nTotal Cost: ${calculateTotalCost().toFixed(
+    const emailBody = `Hi! I would like to make a reservation for below dates:\n\nName: ${fullName}\nEmail: ${email}\nNumber of Guests: ${guests}\nDates: ${formattedStartDate} - ${formattedEndDate}\nTotal Cost: ${calculateTotalCost().toFixed(
       2
     )} €`;
     const mailtoLink = `mailto:par.m79@hotmail.se?subject=Casa Los Larios - Reservation&body=${encodeURIComponent(
@@ -62,7 +63,11 @@ const BookingSection: React.FC = () => {
     setEmailConfirmationModalOpen(true);
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
     setBookingDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
@@ -203,6 +208,14 @@ const BookingSection: React.FC = () => {
                 required
                 onChange={handleInputChange}
               />
+              <select name="guests" required onChange={handleInputChange}>
+                <option value="">Number of Guests</option>
+                {Array.from({ length: 8 }, (_, i) => i + 1).map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+              </select>
               <button type="submit" className={styles.submitButton}>
                 Submit Reservation
               </button>

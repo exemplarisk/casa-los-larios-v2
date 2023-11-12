@@ -107,4 +107,10 @@
     .socialIcons {
         flex-wrap: wrap;
     }
+
+    .socialIcon {
+        width: 2em;
+        height: 2em;
+        display: block;
+    }
 }
