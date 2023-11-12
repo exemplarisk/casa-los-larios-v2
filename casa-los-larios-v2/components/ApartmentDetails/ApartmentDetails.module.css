@@ -58,7 +58,7 @@
 .infoTitle {
     font-weight: 700;
     font-size: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     color: #333;
 }
 
@@ -105,6 +105,10 @@
         padding: 25px 20px;
     }
 
+        .infoIcon {
+            margin-bottom: 0;
+        }
+
     .infoHeading {
         font-size: 2em;
         padding: 0.3em 0;
@@ -119,5 +123,6 @@
     .distanceItem b,
     .distanceItem p {
         text-align: left;
+        font-size: 1em;
     }
 }
