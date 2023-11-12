@@ -104,6 +104,46 @@
     z-index: 2001;
 }
 
+.confirmationModal h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.confirmationModal p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.confirmButton,
+.closeButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.confirmButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.confirmButton:hover {
+    background-color: #45a049;
+}
+
+.closeButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.closeButton:hover {
+    background-color: #da190b;
+}
+
 .modal {
     background: #fff;
     border-radius: 8px;

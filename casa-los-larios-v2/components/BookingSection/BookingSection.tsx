@@ -12,7 +12,9 @@ const BookingSection: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const [emailConfirmationModalOpen, setEmailConfirmationModalOpen] =
+    useState<boolean>(false);
+
   const [showBookingSummary, setShowBookingSummary] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({
     fullName: "",
@@ -21,11 +23,6 @@ const BookingSection: React.FC = () => {
   const pricePerNight = 150;
   const serviceFee = 50;
   const router = useRouter();
-
-  const bookingConfirmed = () => {
-    setIsConfirmationModalOpen(false);
-    setShowBookingSummary(true);
-  };
 
   const calculateTotalNights = () => {
     if (!startDate || !endDate) return 0;
@@ -42,12 +39,27 @@ const BookingSection: React.FC = () => {
     setModalIsOpen(true);
   };
 
+  const handleEmailSentConfirmation = () => {
+    setEmailConfirmationModalOpen(false);
+    setShowBookingSummary(true);
+  };
+
   const handleReservationSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // send data to server
-    console.log("Booking details:", bookingDetails);
 
-    setIsConfirmationModalOpen(true);
+    const { fullName, email } = bookingDetails;
+    const formattedStartDate = new Date(startDate).toDateString();
+    const formattedEndDate = new Date(endDate).toDateString();
+    const emailBody = `Name: ${fullName}\nEmail: ${email}\nDates: ${formattedStartDate} - ${formattedEndDate}\nTotal Cost: ${calculateTotalCost().toFixed(
+      2
+    )} €`;
+    const mailtoLink = `mailto:par.m79@hotmail.se?subject=Casa Los Larios - Reservation&body=${encodeURIComponent(
+      emailBody
+    )}`;
+
+    window.location.href = mailtoLink;
+    setModalIsOpen(false);
+    setEmailConfirmationModalOpen(true);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,20 +74,20 @@ const BookingSection: React.FC = () => {
     <div className={styles.container}>
       {showBookingSummary ? (
         <div className={styles.bookingSummary}>
-          <h2>We have received your booking!</h2>
+          <h2>Your reservation request has been sent!</h2>
           <p>
             Your reservation for {calculateTotalNights()} nights from{" "}
             {startDate?.toLocaleDateString()} to {endDate?.toLocaleDateString()}{" "}
             is yet to be confirmed.
           </p>
           <p>
-            A confirmation email with an invoice will be sent to you once we have confirmed your reservation!
+            A confirmation email with an invoice will be sent to you once we
+            have confirmed your reservation!
           </p>
           <button
             onClick={() => {
               setShowBookingSummary(false);
               setModalIsOpen(false);
-              setIsConfirmationModalOpen(false);
               router.push("/");
             }}
             className={styles.homeButton}
@@ -170,6 +182,11 @@ const BookingSection: React.FC = () => {
                 <span>Total Cost:</span>
                 <span>{calculateTotalCost().toFixed(2)} €</span>
               </p>
+              <p style={{ marginTop: "2em", color: "gray" }}>
+                <span>Confirming this will open your email client.</span>
+                Please send us the reservation email and we can begin processing
+                your reservation
+              </p>
             </div>
             <form onSubmit={handleReservationSubmit}>
               <input
@@ -198,21 +215,24 @@ const BookingSection: React.FC = () => {
             </button>
           </Modal>
           <Modal
-            isOpen={isConfirmationModalOpen}
-            onRequestClose={() => setIsConfirmationModalOpen(false)}
-            contentLabel="Confirmation"
+            isOpen={emailConfirmationModalOpen}
+            onRequestClose={() => setEmailConfirmationModalOpen(false)}
+            contentLabel="Confirm Email Sent"
             className={styles.confirmationModal}
           >
-            <h2>Booking Confirmation</h2>
-            <p>
-              Your reservation request has been received. An invoice will be
-              sent to your email once we have confirmed your reservation.
-            </p>
+            <h2>Email Confirmation</h2>
+            <p>Please confirm that you have sent the reservation email.</p>
             <button
-              onClick={bookingConfirmed}
-              className={styles.confirmationButton}
+              onClick={handleEmailSentConfirmation}
+              className={styles.confirmButton}
             >
-              OK
+              I have sent the email
+            </button>
+            <button
+              onClick={() => setEmailConfirmationModalOpen(false)}
+              className={styles.closeButton}
+            >
+              Close
             </button>
           </Modal>
         </>
