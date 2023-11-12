@@ -17,7 +17,6 @@ const Header: React.FC = () => {
         <Link href="/" style={{ textDecoration: "none" }}>
           <h1>C-L</h1>
         </Link>
-        <p>Your Ideal Summer Getaway</p>
       </div>
       <div className={styles.headerCenter}>
         <LanguageSwitcher />

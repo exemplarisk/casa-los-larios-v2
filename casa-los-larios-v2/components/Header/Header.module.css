@@ -28,14 +28,6 @@
 
 }
 
-.logo p {
-    font-size: 1em;
-    margin: 5px 0;
-    color: #666;
-    font-style: italic;
-
-}
-
 .navigation {
     z-index: 0;
 }
@@ -109,11 +101,8 @@
     }
 
     .logo {
-        
         text-align: left;
-        
         margin-left: 0;
-        
         max-width: 13em;
     }
 
