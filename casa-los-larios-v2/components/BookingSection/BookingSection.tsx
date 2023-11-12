@@ -50,7 +50,7 @@ const BookingSection: React.FC = () => {
     const { fullName, email } = bookingDetails;
     const formattedStartDate = new Date(startDate).toDateString();
     const formattedEndDate = new Date(endDate).toDateString();
-    const emailBody = `Name: ${fullName}\nEmail: ${email}\nDates: ${formattedStartDate} - ${formattedEndDate}\nTotal Cost: ${calculateTotalCost().toFixed(
+    const emailBody = `Hi! I would like to make a reservation for below dates:\n\nName: ${fullName}\nEmail: ${email}\nDates: ${formattedStartDate} - ${formattedEndDate}\nTotal Cost: ${calculateTotalCost().toFixed(
       2
     )} €`;
     const mailtoLink = `mailto:par.m79@hotmail.se?subject=Casa Los Larios - Reservation&body=${encodeURIComponent(
