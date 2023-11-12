@@ -16,9 +16,7 @@
 
 .logo {
     text-align: left;
-    flex: 1;
     margin-left: 2vw;
-
 }
 
 .logo h1 {
@@ -105,8 +103,6 @@
     }
 
     .logo {
-        flex-basis: 100%;
-        justify-content: space-between;
         margin-left: 0;
     }
 
