@@ -7,13 +7,13 @@ export const PrivacyContent: React.FC = () => {
     <div className={styles.privacyContainer}>
       <h1 className={styles.title}>Privacy Policy</h1>
       {privacyPolicySections.map((section, index) => (
-        <div key={index}>
+        <section key={index}>
           <h2 className={styles.subtitle}>{section.title}</h2>
           <p
             className={styles.text}
             dangerouslySetInnerHTML={{ __html: section.content }}
           />
-        </div>
+        </section>
       ))}
     </div>
   );
