@@ -1,27 +1,27 @@
 const highlightsData = [
   {
     image: "/comfort1.jpg",
-    title: "Luxurious Comfort",
+    title: "Comfortable Stay",
     description:
-      "Experience the ultimate in comfort with our fully equipped, modern apartment.",
+      "Experience real comfort with our fully equipped, modern apartment.",
   },
   {
     image: "/aparoutd.jpg",
     title: "Pools",
     description:
-      "Take a dip in our exclusive, crystal-clear pools for a refreshing aquatic retreat any time of the day.",
+      "Take a dip in our exclusive, crystal-clear pool for a refreshing aquatic retreat any time of the day.",
   },
   {
     image: "/beachfront.jpg",
     title: "Beachfront Bliss",
     description:
-      "Step out onto the sun-drenched shores from our beachfront properties for the perfect tan or a serene evening walk.",
+      "Cool off at the beach only a 20 minute walk from Casa Los Larios.",
   },
   {
     image: "/gastronomic2.jpg",
     title: "Gastronomic Delights",
     description:
-      "Savor the taste of local Spanish cuisine at nearby gourmet restaurants.",
+      "Try out local Spanish cuisine at the nearby gourmet restaurants.",
   },
   {
     image: "/meatmarket.jpg",
@@ -30,7 +30,7 @@ const highlightsData = [
       "Explore the market around the corner of Casa Los Larios. Every Sunday from 09-15. Here you will find everything from fresh fruits & vegetables, to toys and clothing.",
   },
   {
-    image: "/seaview1.jpg",
+    image: "/sunsetview.jpg",
     title: "Sunset Views",
     description:
       "Enjoy breathtaking sunset views from our private terrassa, overlooking the landscapes of Orihuela Costa.",

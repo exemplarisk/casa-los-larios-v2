@@ -4,17 +4,23 @@ import styles from "./Gallery.module.css";
 const Gallery: React.FC = () => {
   const images = [
     "/familia1.jpg",
-    "/summergetaway.jpg",
-    "/summergetaway1.jpg",
+    "/casaloslarios.jpg",
     "/seaview1.jpg",
     "/seaview2.jpg",
     "/beachwalk1.jpg",
     "/beachfront.jpg",
-    "/attraction1.jpg",
     "/aparoutd.jpg",
-    "/summergetaway1.jpg",
-    "/seaview1.jpg",
-    "/familia1.jpg",
+    "/poolviewhero.jpg",
+    "/sunsetview.jpg",
+    "/attraction1.jpg",
+    "/diningroom.jpg",
+    "/sofa.jpg",
+    "/comfort1.jpg",
+    "/terrassa1.jpg",
+    "/golf.jpg",
+    "/meatmarket.jpg",
+    "/gastronomic1.jpg",
+    "/gastronomic2.jpg",
   ];
 
   const [activeImage, setActiveImage] = useState<string | null>(null);
