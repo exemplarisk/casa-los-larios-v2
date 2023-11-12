@@ -19,27 +19,35 @@ const ContactInfo: React.FC = () => {
         <h2>Contact Us</h2>
       </div>
       <div className={styles.contactDetails}>
-        <a
-          href="http://maps.google.com/?q=C. Guapiles 7, 03189, Orihuela, Alicante, Spain"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.contactCard}
-        >
+        <div className={styles.contactCard}>
           <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
-          <span>C. Guapiles 7, 03189, Orihuela, Alicante, Spain</span>
-        </a>
-        <a href="mailto:info@casaloslarios.com" className={styles.contactCard}>
+          <div className={styles.contactText}>
+            <span>Visit Us</span>
+            <a
+              href="http://maps.google.com/?q=C. Guapiles 7, 03189, Orihuela, Alicante, Spain"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              C. Guapiles 7, 03189, Orihuela, Alicante, Spain
+            </a>
+          </div>
+        </div>
+        <div className={styles.contactCard}>
           <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
-          <span>info@casaloslarios.com</span>
-        </a>
-        <a
-          href="tel:+123-456-78900"
-          className={styles.contactCard}
-          aria-label="Call us"
-        >
+          <div className={styles.contactText}>
+            <span>Email Us</span>
+            <a href="mailto:info@casaloslarios.com">info@casaloslarios.com</a>
+          </div>
+        </div>
+        <div className={styles.contactCard}>
           <FontAwesomeIcon icon={faPhone} className={styles.icon} />
-          <span>+123-456-78900</span>
-        </a>
+          <div className={styles.contactText}>
+            <span>Call Us</span>
+            <a href="tel:+123-456-78900" aria-label="Call us">
+              +123-456-78900
+            </a>
+          </div>
+        </div>
       </div>
       <div className={styles.connectSection}>
         <h3>Connect</h3>
