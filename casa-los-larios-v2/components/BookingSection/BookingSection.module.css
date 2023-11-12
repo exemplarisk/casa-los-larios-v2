@@ -242,6 +242,58 @@
     background-color: #0a9396;
 }
 
+.modal select {
+    background-color: #f8f8f8;
+    /* Light grey background */
+    color: #333;
+    /* Dark grey text */
+    border: 1px solid #ccc;
+    /* Light grey border */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 8px 12px;
+    /* Padding for a larger click area and visual comfort */
+    margin: 0;
+    /* Reset any default margin */
+    width: 100%;
+    /* Full width to fit the container */
+    -webkit-appearance: none;
+    /* Removes default styling on iOS */
+    -moz-appearance: none;
+    /* Removes default styling on Firefox */
+    appearance: none;
+    /* Standard syntax to remove default arrow */
+    font-family: inherit;
+    /* Matches the font to the rest of your form */
+    font-size: 1rem;
+    /* Adequate font size for readability */
+    cursor: pointer;
+    /* Changes the cursor to indicate it's a dropdown */
+    line-height: 1.5;
+    /* Spacing for text within the select */
+    outline: none;
+    /* Removes the default focus outline, customize below */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Smooth transition for focus */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L10 13L15 8H5Z" fill="%23333"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        /* Position the arrow to the right */
+        background-size: 12px;
+        /* Size of the custom arrow */
+}
+
+.modal select:focus {
+    border-color: #0066cc;
+    /* Highlight color when the select is focused */
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.25);
+    /* Glow effect for focused state */
+}
+
+.modal select::-ms-expand {
+    display: none;
+}
+
 .modal button {
     padding: 10px 15px;
     border-radius: 4px;
@@ -323,6 +375,11 @@
     .homeButton {
         padding: 0.6rem 1.2rem;
     }
+
+        .modal select {
+            padding: 10px 15px;
+            /* Slightly larger padding on smaller screens */
+        }
 }
 
 @media (max-width: 480px) {
