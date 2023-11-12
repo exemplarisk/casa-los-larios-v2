@@ -8,7 +8,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div id="root" className={styles.container}>
       <Header />
-      <LanguageSwitcher />
       <main className={styles.main}>{children}</main>
       <Footer />
     </div>

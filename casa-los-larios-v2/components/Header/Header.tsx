@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 const Header: React.FC = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
@@ -18,9 +19,12 @@ const Header: React.FC = () => {
         </Link>
         <p>Your Ideal Summer Getaway</p>
       </div>
-      <button onClick={toggleNav} className={styles.navToggle}>
-        {isNavVisible ? <FaTimes /> : <FaBars />}
-      </button>
+      <div className={styles.headerCenter}>
+        <LanguageSwitcher />
+        <button onClick={toggleNav} className={styles.navToggle}>
+          {isNavVisible ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
       <nav
         className={`${styles.navigation} ${isNavVisible ? styles.visible : ""}`}
       >

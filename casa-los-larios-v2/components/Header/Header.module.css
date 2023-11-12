@@ -88,6 +88,7 @@
 
 .navToggle {
     display: none;
+    position: relative;
     background: none;
     border: none;
     font-size: 24px;
@@ -95,15 +96,34 @@
     color: #333;
 }
 
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
 @media (max-width: 768px) {
     .header {
-        flex-wrap: wrap;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        display: block;
     }
 
     .logo {
+        /* Allow the logo to grow */
+        text-align: left;
+        /* Align the text to the left */
         margin-left: 0;
+        /* Reset any margin */
+        max-width: 13em;
+    }
+
+    .headerCenter {
+        order: 2;
+        /* Center position for languageSwitcher and potentially other elements */
+        flex: 0 1 auto;
+        /* Do not grow but allow shrink */
+        justify-content: center;
+        /* Center items */
     }
 
     .navigation {
@@ -143,6 +163,9 @@
 
     .navToggle {
         display: block;
+        /* Show the navToggle */
+        order: 3;
+        /* Set order to push it to the right */
         position: absolute;
         top: 20px;
         right: 20px;

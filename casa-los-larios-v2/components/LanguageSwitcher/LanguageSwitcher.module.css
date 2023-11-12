@@ -3,9 +3,7 @@
     justify-content: center;
     margin: 10px 0;
     z-index: 1001;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    align-items: center;
 }
 
 .button {
@@ -20,9 +18,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     border: none;
-    /* Add this if you want to remove border on buttons */
     background: none;
-    /* Add this if you want a transparent background for buttons */
 }
 
 .button:hover {
@@ -36,13 +32,15 @@
 
 .flagIcon {
     width: 24px;
-    /* or the size you prefer */
     height: auto;
-    /* maintains aspect ratio */
 }
 
-/* Additional styles for the flags when they are inside the button element */
 .button .flagIcon {
     pointer-events: none;
-    /* This ensures the flag does not capture click events */
+}
+
+@media (max-width: 768px) {
+    .languageSwitcher {
+        flex: none;
+    }
 }
