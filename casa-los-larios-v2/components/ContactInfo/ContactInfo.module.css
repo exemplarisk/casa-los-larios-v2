@@ -2,18 +2,18 @@
     background: url('/summergetaway.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
-    /* Added to position overlay */
+    
 }
 
 .overlay {
-    /* Overlay to enhance text contrast */
+    
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.7);
-    /* Semi-transparent white overlay */
+    
     z-index: 1;
 }
 
@@ -22,34 +22,34 @@
     flex-direction: column;
     align-items: center;
     padding: 8em 1em;
-    /* Adjusted padding */
+    
     margin: auto;
     max-width: 800px;
     background: rgba(255, 255, 255, 0.9);
-    /* Light background for contrast */
+    
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* More pronounced shadow */
+    
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     z-index: 2;
-    /* To be above the overlay */
+    
     position: relative;
-    /* To be positioned correctly within the overlay */
+    
 }
 
 .contactHeader {
     text-align: center;
     margin-bottom: 1em;
-    /* Adjusted spacing */
+    
 }
 
 .contactHeader h2 {
     color: #0277bd;
-    /* Changed color for better visibility */
+    
     font-size: 2.5em;
-    /* Increased font size */
+    
     font-weight: bold;
-    /* Made the title bold */
+    
 }
 
 .contactCard {
@@ -60,16 +60,16 @@
     margin: 0.5em 0;
     cursor: pointer;
     background-color: #ffffff;
-    /* Changed to white for better contrast */
+    
     text-decoration: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contactCard:hover {
     background-color: #f1f1f1;
-    /* Light grey on hover for feedback */
+    
     transform: scale(1.02);
-    /* Slight grow effect on hover */
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,7 +78,7 @@
     align-items: center;
     width: 100%;
     color: #005f73;
-    /* Ensuring text color is consistent */
+    
 }
 
 .contactDetails {
@@ -103,7 +103,7 @@
     color: #005f73;
     margin-bottom: 1em;
     font-size: 2em;
-    /* Increased the font size */
+    
 }
 
 .socialIcon {
@@ -122,12 +122,12 @@
 @media (max-width: 768px) {
     .contactSection {
         padding: 8em 1em;
-        /* Reduced padding on mobile */
+        
     }
 
     .contactHeader h2 {
         font-size: 1.5rem;
-        /* Reduced font size on mobile */
+        
     }
 
     .contactCard {
@@ -140,11 +140,11 @@
 
     .socialIcon {
         font-size: 1.25em;
-        /* Adjusted icon size on mobile */
+        
     }
 
     .icon {
         font-size: 1.25em;
-        /* Adjusted icon size on mobile */
+        
     }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./Hero.module.css";
+import { useTranslation } from "next-i18next";
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation("common");
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
-        <h2>Welcome to Casa Los Larios</h2>
-        <p>Your ideal summer retreat in Torrevieja, Spain.</p>
+        <h2>{t("welcome")}</h2>
+        <p>{t("retreat")}</p>
         <a href="/booking" className={styles.ctaButton}>
-          BOOK YOUR STAY
+          {t("bookNow")}
         </a>
       </div>
     </section>
