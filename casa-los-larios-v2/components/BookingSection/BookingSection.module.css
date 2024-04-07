@@ -170,7 +170,7 @@
 
 .bookingSummary h2 {
     color: #27ae60;
-    
+
     margin-bottom: 1rem;
 }
 
@@ -181,7 +181,7 @@
 
 .homeButton {
     background-color: #27ae60;
-    
+
     color: white;
     border: none;
     padding: 0.8rem 1.6rem;
@@ -193,7 +193,7 @@
 
 .homeButton:hover {
     background-color: #2ecc71;
-    
+
 }
 
 .confirmationButton {
@@ -244,50 +244,30 @@
 
 .modal select {
     background-color: #f8f8f8;
-    /* Light grey background */
     color: #333;
-    /* Dark grey text */
     border: 1px solid #ccc;
-    /* Light grey border */
     border-radius: 4px;
-    /* Rounded corners */
     padding: 8px 12px;
-    /* Padding for a larger click area and visual comfort */
     margin: 0;
-    /* Reset any default margin */
     width: 100%;
-    /* Full width to fit the container */
     -webkit-appearance: none;
-    /* Removes default styling on iOS */
     -moz-appearance: none;
-    /* Removes default styling on Firefox */
     appearance: none;
-    /* Standard syntax to remove default arrow */
     font-family: inherit;
-    /* Matches the font to the rest of your form */
     font-size: 1rem;
-    /* Adequate font size for readability */
     cursor: pointer;
-    /* Changes the cursor to indicate it's a dropdown */
     line-height: 1.5;
-    /* Spacing for text within the select */
     outline: none;
-    /* Removes the default focus outline, customize below */
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    /* Smooth transition for focus */
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L10 13L15 8H5Z" fill="%23333"/></svg>');
-        background-repeat: no-repeat;
-        background-position: right 10px center;
-        /* Position the arrow to the right */
-        background-size: 12px;
-        /* Size of the custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
 
 .modal select:focus {
     border-color: #0066cc;
-    /* Highlight color when the select is focused */
     box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.25);
-    /* Glow effect for focused state */
 }
 
 .modal select::-ms-expand {
@@ -351,6 +331,29 @@
     font-weight: bold;
 }
 
+.backButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #e0e0e0;
+}
+
+.backButton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
 @media (max-width: 768px) {
     .calendarContainer {
         flex-direction: column;
@@ -376,9 +379,9 @@
         padding: 0.6rem 1.2rem;
     }
 
-        .modal select {
-            padding: 10px 15px;
-        }
+    .modal select {
+        padding: 10px 15px;
+    }
 }
 
 @media (max-width: 480px) {

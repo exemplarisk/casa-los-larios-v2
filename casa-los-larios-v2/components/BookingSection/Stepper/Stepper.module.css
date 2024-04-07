@@ -1,0 +1,10 @@
+.stepper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.activeStep {
+    border-bottom: 2px solid blue;
+}
