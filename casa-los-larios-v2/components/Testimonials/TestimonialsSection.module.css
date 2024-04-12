@@ -17,6 +17,7 @@
     overflow-x: auto;
     gap: 30px;
     padding-bottom: 20px;
+    justify-content: center;
 }
 
 .testimonial {
