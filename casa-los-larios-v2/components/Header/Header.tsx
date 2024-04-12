@@ -3,10 +3,11 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { useTranslation } from "next-i18next";
 
 const Header: React.FC = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
-
+  const { t } = useTranslation("common");
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
@@ -29,20 +30,20 @@ const Header: React.FC = () => {
       >
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">{t("home")}</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/about">{t("about")}</Link>
           </li>
 
           <li>
-            <Link href="/gallery">Gallery</Link>
+            <Link href="/gallery">{t("gallery")}</Link>
           </li>
           <li>
-            <Link href="/booking">Booking</Link>
+            <Link href="/booking">{t("booking")}</Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">{t("contact")}</Link>
           </li>
         </ul>
       </nav>

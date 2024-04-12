@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       <div className={styles.footerContent}>
         <section className={styles.footerLogo}>
           <h2 className={styles.brandTitle}>Casa Los Larios</h2>
-          <p className={styles.tagline}>Your Ideal Summer Getaway</p>
+          <p className={styles.tagline}>By Larios</p>
         </section>
         <address className={styles.contactInfo}>
           <h3>Contact Us</h3>
